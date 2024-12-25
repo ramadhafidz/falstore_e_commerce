@@ -245,7 +245,7 @@
 
       <div class="logo">
         <a href="index.html">
-          <img src="images/logo.png" alt="Uomo" class="logo__image d-block" />
+          <img src="{{ asset(' images/logo.png') }}" alt="Uomo" class="logo__image d-block" />
         </a>
       </div>
 
@@ -402,7 +402,7 @@
               <tr>
                 <td>
                   <div class="shopping-cart__product-item">
-                    <img loading="lazy" src="images/cart-item-1.jpg" width="120" height="120" alt="" />
+                    <img loading="lazy" src="{{ asset(' images/cart-item-1.jpg') }}" width="120" height="120" alt="" />
                   </div>
                 </td>
                 <td>
@@ -439,7 +439,7 @@
               <tr>
                 <td>
                   <div class="shopping-cart__product-item">
-                    <img loading="lazy" src="images/cart-item-2.jpg" width="120" height="120" alt="" />
+                    <img loading="lazy" src="{{ asset(' images/cart-item-2.jpg') }}" width="120" height="120" alt="" />
                   </div>
                 </td>
                 <td>
@@ -476,7 +476,7 @@
               <tr>
                 <td>
                   <div class="shopping-cart__product-item">
-                    <img loading="lazy" src="images/cart-item-3.jpg" width="120" height="120" alt="" />
+                    <img loading="lazy" src="{{ asset(' images/cart-item-3.jpg') }}" width="120" height="120" alt="" />
                   </div>
                 </td>
                 <td>
