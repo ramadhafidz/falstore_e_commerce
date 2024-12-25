@@ -9,9 +9,11 @@ Route::get('/', function () {
 
 Route::view('/account', 'account.index');
 Route::view('/account/order', 'account.order');
+Route::view('/account/order/detail', 'account.order-detail');
 Route::view('/cart', 'cart.index');
 Route::view('/about', 'about');
 Route::view('/shop', 'shop');
+Route::view('/contact', 'contact');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
