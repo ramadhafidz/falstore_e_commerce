@@ -368,7 +368,7 @@
               <div class="swiper-container">
                 <div class="swiper-wrapper">
                   <div class="swiper-slide product-single__image-item">
-                    <img loading="lazy" class="h-auto" src="{{ asset('images/products/product_0.jpg') }}" width="674"
+                    <img loading="lazy" class="h-auto" src="{{ asset('images/product/product_0.jpg') }}" width="674"
                       height="674" alt="" />
                     <a data-fancybox="gallery" href="../images/products/product_0.html" data-bs-toggle="tooltip"
                       data-bs-placement="left" title="Zoom">
@@ -380,7 +380,7 @@
                   <div class="swiper-slide product-single__image-item">
                     <img loading="lazy" class="h-auto" src="{{ asset('images/product/product_0-1.jpg') }}" width="674"
                       height="674" alt="" />
-                    <a data-fancybox="gallery" href="../images/products/product_0-1.html" data-bs-toggle="tooltip"
+                    <a data-fancybox="gallery" href="../images/product/product_0-1.html" data-bs-toggle="tooltip"
                       data-bs-placement="left" title="Zoom">
                       <svg width="16" height="16" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg">
                         <use href="#icon_zoom" />
