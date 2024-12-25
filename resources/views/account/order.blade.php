@@ -359,73 +359,135 @@
     </nav>
   </div>
 
-  <main class="pt-90">
+
+  <main class="pt-90" style="padding-top: 0px;">
     <div class="mb-4 pb-4"></div>
-    <section class="login-register container">
-      <ul class="nav nav-tabs mb-5" id="login_register" role="tablist">
-        <li class="nav-item" role="presentation">
-          <a class="nav-link nav-link_underscore active" id="register-tab" data-bs-toggle="tab"
-            href="#tab-item-register" role="tab" aria-controls="tab-item-register" aria-selected="true">Register</a>
-        </li>
-      </ul>
-      <div class="tab-content pt-2" id="login_register_tab_content">
-        <div class="tab-pane fade show active" id="tab-item-register" role="tabpanel" aria-labelledby="register-tab">
-          <div class="register-form">
-            <form method="POST" action="#" name="register-form" class="needs-validation" novalidate="">
-              <div class="form-floating mb-3">
-                <input class="form-control form-control_gray " name="name" value="" required="" autocomplete="name"
-                  autofocus="">
-                <label for="name">Name</label>
-              </div>
-              <div class="pb-3"></div>
-              <div class="form-floating mb-3">
-                <input id="email" type="email" class="form-control form-control_gray " name="email" value="" required=""
-                  autocomplete="email">
-                <label for="email">Email address *</label>
-              </div>
+    <section class="my-account container">
+        <h2 class="page-title">Orders</h2>
+        <div class="row">
+            <div class="col-lg-2">
+                <ul class="account-nav">
+    <li><a href="http://localhost:8000/account-dashboard" class="menu-link menu-link_us-s ">Dashboard</a></li>
+    <li><a href="http://localhost:8000/account-orders" class="menu-link menu-link_us-s menu-link_active">Orders</a></li>
+    <li><a href="http://localhost:8000/account-addresses" class="menu-link menu-link_us-s ">Addresses</a></li>
+    <li><a href="http://localhost:8000/account-details" class="menu-link menu-link_us-s ">Account Details</a></li>
+    <li><a href="http://localhost:8000/account-wishlists" class="menu-link menu-link_us-s ">Wishlist</a></li>
+    <li>
+        <form method="POST" action="http://localhost:8000/logout" id="logout-form-1">
+            <input type="hidden" name="_token" value="3v611ELheIo6fqsgspMOk0eiSZjncEeubOwUa6YT" autocomplete="off">            <a href="http://localhost:8000/logout" class="menu-link menu-link_us-s" onclick="event.preventDefault(); document.getElementById('logout-form-1').submit();">Logout</a>
+        </form>
+    </li>
+</ul>            </div>
 
-              <div class="pb-3"></div>
-
-              <div class="form-floating mb-3">
-                <input id="mobile" type="text" class="form-control form-control_gray " name="mobile" value=""
-                  required="" autocomplete="mobile">
-                <label for="mobile">Mobile *</label>
-              </div>
-
-              <div class="pb-3"></div>
-
-              <div class="form-floating mb-3">
-                <input id="password" type="password" class="form-control form-control_gray " name="password" required=""
-                  autocomplete="new-password">
-                <label for="password">Password *</label>
-              </div>
-
-              <div class="form-floating mb-3">
-                <input id="password-confirm" type="password" class="form-control form-control_gray"
-                  name="password_confirmation" required="" autocomplete="new-password">
-                <label for="password">Confirm Password *</label>
-              </div>
-
-              <div class="d-flex align-items-center mb-3 pb-2">
-                <p class="m-0">Your personal data will be used to support your experience throughout this website, to
-                  manage access to your account, and for other purposes described in our privacy policy.</p>
-              </div>
-
-              <button class="btn btn-primary w-100 text-uppercase" type="submit">Register</button>
-
-              <div class="customer-option mt-4 text-center">
-                <span class="text-secondary">Have an account?</span>
-                <a href="login.html" class="btn-text js-show-register">Login to your Account</a>
-              </div>
-            </form>
-          </div>
+            <div class="col-lg-10">
+                <div class="wg-table table-all-user">
+                    <div class="table-responsive">
+                        <table class="table table-striped table-bordered">
+                            <thead>
+                                <tr>
+                                    <th style="width: 80px">OrderNo</th>
+                                    <th>Name</th>
+                                    <th class="text-center">Phone</th>
+                                    <th class="text-center">Subtotal</th>
+                                    <th class="text-center">Tax</th>
+                                    <th class="text-center">Total</th>
+                                    
+                                    <th class="text-center">Status</th>
+                                    <th class="text-center">Order Date</th>
+                                    <th class="text-center">Items</th>
+                                    <th class="text-center">Delivered On</th>
+                                    <th></th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                                                <tr>
+                                    <td class="text-center">10001</td>  
+                                    <td class="text-center">Sudhir Kumar</td>
+                                    <td class="text-center">1234567891</td>
+                                    <td class="text-center">$172.00</td>
+                                    <td class="text-center">$36.12</td>
+                                    <td class="text-center">$208.12</td>
+                                    
+                                    <td class="text-center">
+                                                                                    <span class="badge bg-danger">Canceled</span>
+                                                                            </td>
+                                    <td class="text-center">2024-07-11 00:54:14</td>
+                                    <td class="text-center">2</td>
+                                    <td>2024-07-07</td>
+                                    <td class="text-center">
+                                        <a href="account-orders-details.html">
+                                        <div class="list-icon-function view-icon">
+                                            <div class="item eye">
+                                                <i class="fa fa-eye"></i>
+                                            </div>                                        
+                                        </div>
+                                        </a>
+                                    </td>
+                                </tr>
+                                                                <tr>
+                                    <td class="text-center">10003</td>  
+                                    <td class="text-center">Sudhir Kumar</td>
+                                    <td class="text-center">1234567891</td>
+                                    <td class="text-center">$154.80</td>
+                                    <td class="text-center">$32.51</td>
+                                    <td class="text-center">$187.31</td>
+                                    
+                                    <td class="text-center">
+                                                                                    <span class="badge bg-warning">Ordered</span>
+                                                                            </td>
+                                    <td class="text-center">2024-06-17 10:41:09</td>
+                                    <td class="text-center">2</td>
+                                    <td></td>
+                                    <td class="text-center">
+                                        <a href="account-orders-details.html">
+                                        <div class="list-icon-function view-icon">
+                                            <div class="item eye">
+                                                <i class="fa fa-eye"></i>
+                                            </div>                                        
+                                        </div>
+                                        </a>
+                                    </td>
+                                </tr>
+                                                                <tr>
+                                    <td class="text-center">10002</td>  
+                                    <td class="text-center">Sudhir Kumar</td>
+                                    <td class="text-center">1234567891</td>
+                                    <td class="text-center">$71.00</td>
+                                    <td class="text-center">$14.91</td>
+                                    <td class="text-center">$85.91</td>
+                                    
+                                    <td class="text-center">
+                                                                                    <span class="badge bg-warning">Ordered</span>
+                                                                            </td>
+                                    <td class="text-center">2024-06-11 01:02:55</td>
+                                    <td class="text-center">1</td>
+                                    <td></td>
+                                    <td class="text-center">
+                                        <a href="account-orders-details.html">
+                                        <div class="list-icon-function view-icon">
+                                            <div class="item eye">
+                                                <i class="fa fa-eye"></i>
+                                            </div>                                        
+                                        </div>
+                                        </a>
+                                    </td>
+                                </tr>
+                                                                  
+                            </tbody>
+                        </table>                
+                    </div>
+                </div>
+                <div class="divider"></div>
+                <div class="flex items-center justify-between flex-wrap gap10 wgp-pagination">                
+                    
+                </div>
+            </div>
+            
         </div>
-      </div>
     </section>
-  </main>
+</main>
 
   <hr class="mt-5 text-secondary" />
-
 
   <div id="scrollTop" class="visually-hidden end-0"></div>
   <div class="page-overlay"></div>

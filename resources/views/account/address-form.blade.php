@@ -245,7 +245,7 @@
 
       <div class="logo">
         <a href="index.html">
-          <img src="assets/images/logo.png" alt="Uomo" class="logo__image d-block" />
+          <img src="images/logo.png" alt="Uomo" class="logo__image d-block" />
         </a>
       </div>
 
@@ -361,71 +361,120 @@
 
   <main class="pt-90">
     <div class="mb-4 pb-4"></div>
-    <section class="login-register container">
-      <ul class="nav nav-tabs mb-5" id="login_register" role="tablist">
-        <li class="nav-item" role="presentation">
-          <a class="nav-link nav-link_underscore active" id="register-tab" data-bs-toggle="tab"
-            href="#tab-item-register" role="tab" aria-controls="tab-item-register" aria-selected="true">Register</a>
-        </li>
-      </ul>
-      <div class="tab-content pt-2" id="login_register_tab_content">
-        <div class="tab-pane fade show active" id="tab-item-register" role="tabpanel" aria-labelledby="register-tab">
-          <div class="register-form">
-            <form method="POST" action="#" name="register-form" class="needs-validation" novalidate="">
-              <div class="form-floating mb-3">
-                <input class="form-control form-control_gray " name="name" value="" required="" autocomplete="name"
-                  autofocus="">
-                <label for="name">Name</label>
-              </div>
-              <div class="pb-3"></div>
-              <div class="form-floating mb-3">
-                <input id="email" type="email" class="form-control form-control_gray " name="email" value="" required=""
-                  autocomplete="email">
-                <label for="email">Email address *</label>
-              </div>
-
-              <div class="pb-3"></div>
-
-              <div class="form-floating mb-3">
-                <input id="mobile" type="text" class="form-control form-control_gray " name="mobile" value=""
-                  required="" autocomplete="mobile">
-                <label for="mobile">Mobile *</label>
-              </div>
-
-              <div class="pb-3"></div>
-
-              <div class="form-floating mb-3">
-                <input id="password" type="password" class="form-control form-control_gray " name="password" required=""
-                  autocomplete="new-password">
-                <label for="password">Password *</label>
-              </div>
-
-              <div class="form-floating mb-3">
-                <input id="password-confirm" type="password" class="form-control form-control_gray"
-                  name="password_confirmation" required="" autocomplete="new-password">
-                <label for="password">Confirm Password *</label>
-              </div>
-
-              <div class="d-flex align-items-center mb-3 pb-2">
-                <p class="m-0">Your personal data will be used to support your experience throughout this website, to
-                  manage access to your account, and for other purposes described in our privacy policy.</p>
-              </div>
-
-              <button class="btn btn-primary w-100 text-uppercase" type="submit">Register</button>
-
-              <div class="customer-option mt-4 text-center">
-                <span class="text-secondary">Have an account?</span>
-                <a href="login.html" class="btn-text js-show-register">Login to your Account</a>
-              </div>
-            </form>
-          </div>
+    <section class="my-account container">
+      <h2 class="page-title">Address</h2>
+      <div class="row">
+        <div class="col-lg-3">
+          <ul class="account-nav">
+            <li><a href="my-account.html" class="menu-link menu-link_us-s">Dashboard</a></li>
+            <li><a href="account-orders.html" class="menu-link menu-link_us-s">Orders</a></li>
+            <li><a href="account-address.html" class="menu-link menu-link_us-s">Addresses</a></li>
+            <li><a href="account-details.html" class="menu-link menu-link_us-s">Account Details</a></li>
+            <li><a href="account-wishlist.html" class="menu-link menu-link_us-s">Wishlist</a></li>
+            <li><a href="login.html" class="menu-link menu-link_us-s">Logout</a></li>
+          </ul>
         </div>
+        <div class="col-lg-9">
+          <div class="page-content my-account__address">
+              <div class="row">
+                  <div class="col-6">
+                      <p class="notice">The following addresses will be used on the checkout page by default.</p>
+                  </div>
+                  <div class="col-6 text-right">
+                      <a href="#" class="btn btn-sm btn-danger">Back</a>
+                  </div>
+              </div>
+
+              <div class="row">
+                  <div class="col-md-8">
+                      <div class="card mb-5">
+                          <div class="card-header">
+                              <h5>Add New Address</h5>
+                          </div>
+                          <div class="card-body">
+                              <form action="#" method="POST">
+                                  <div class="row">
+                                      <div class="col-md-6">
+                                          <div class="form-floating my-3">
+                                              <input type="text" class="form-control" name="name" value="">
+                                              <label for="name">Full Name *</label>
+                                              <span class="text-danger"></span>
+                                          </div>
+                                      </div>
+                                      <div class="col-md-6">
+                                          <div class="form-floating my-3">
+                                              <input type="text" class="form-control" name="phone" value="">
+                                              <label for="phone">Phone Number *</label>
+                                              <span class="text-danger"></span>
+                                          </div>
+                                      </div>
+                                      <div class="col-md-4">
+                                          <div class="form-floating my-3">
+                                              <input type="text" class="form-control" name="zip" value="">
+                                              <label for="zip">Pincode *</label>
+                                              <span class="text-danger"></span>
+                                          </div>
+                                      </div>                        
+                                      <div class="col-md-4">
+                                          <div class="form-floating mt-3 mb-3">
+                                              <input type="text" class="form-control" name="state" value="">
+                                              <label for="state">State *</label>
+                                              <span class="text-danger"></span>
+                                          </div>                            
+                                      </div>
+                                      <div class="col-md-4">
+                                          <div class="form-floating my-3">
+                                              <input type="text" class="form-control" name="city" value="">
+                                              <label for="city">Town / City *</label>
+                                              <span class="text-danger"></span>
+                                          </div>
+                                      </div>
+                                      <div class="col-md-6">
+                                          <div class="form-floating my-3">
+                                              <input type="text" class="form-control" name="address" value="">
+                                              <label for="address">House no, Building Name *</label>
+                                              <span class="text-danger"></span>
+                                          </div>
+                                      </div>
+                                      <div class="col-md-6">
+                                          <div class="form-floating my-3">
+                                              <input type="text" class="form-control" name="locality" value="">
+                                              <label for="locality">Road Name, Area, Colony *</label>
+                                              <span class="text-danger"></span>
+                                          </div>
+                                      </div>    
+                                      <div class="col-md-12">
+                                          <div class="form-floating my-3">
+                                              <input type="text" class="form-control" name="landmark" value="">
+                                              <label for="landmark">Landmark *</label>
+                                              <span class="text-danger"></span>
+                                          </div>
+                                      </div>  
+                                      <div class="col-md-6">
+                                          <div class="form-check">
+                                              <input class="form-check-input" type="checkbox" value="1" id="isdefault" name="isdefault">
+                                              <label class="form-check-label" for="isdefault">
+                                                  Make as Default address
+                                              </label>
+                                          </div>
+                                      </div>  
+                                      <div class="col-md-12 text-right">
+                                          <button type="submit" class="btn btn-success">Submit</button>
+                                      </div>                                     
+                                  </div>
+                              </form> 
+                          </div>
+                      </div>
+                  </div>
+              </div>
+              <hr>                    
+          </div>
+      </div>
       </div>
     </section>
   </main>
 
   <hr class="mt-5 text-secondary" />
-
 
   <div id="scrollTop" class="visually-hidden end-0"></div>
   <div class="page-overlay"></div>

@@ -245,7 +245,7 @@
 
       <div class="logo">
         <a href="index.html">
-          <img src="assets/images/logo.png" alt="Uomo" class="logo__image d-block" />
+          <img src="images/logo.png" alt="Uomo" class="logo__image d-block" />
         </a>
       </div>
 
@@ -358,75 +358,57 @@
       </div>
     </nav>
   </div>
-
   <main class="pt-90">
     <div class="mb-4 pb-4"></div>
-    <section class="login-register container">
-      <ul class="nav nav-tabs mb-5" id="login_register" role="tablist">
-        <li class="nav-item" role="presentation">
-          <a class="nav-link nav-link_underscore active" id="register-tab" data-bs-toggle="tab"
-            href="#tab-item-register" role="tab" aria-controls="tab-item-register" aria-selected="true">Register</a>
-        </li>
-      </ul>
-      <div class="tab-content pt-2" id="login_register_tab_content">
-        <div class="tab-pane fade show active" id="tab-item-register" role="tabpanel" aria-labelledby="register-tab">
-          <div class="register-form">
-            <form method="POST" action="#" name="register-form" class="needs-validation" novalidate="">
-              <div class="form-floating mb-3">
-                <input class="form-control form-control_gray " name="name" value="" required="" autocomplete="name"
-                  autofocus="">
-                <label for="name">Name</label>
-              </div>
-              <div class="pb-3"></div>
-              <div class="form-floating mb-3">
-                <input id="email" type="email" class="form-control form-control_gray " name="email" value="" required=""
-                  autocomplete="email">
-                <label for="email">Email address *</label>
-              </div>
+    <section class="contact-us container">
+      <div class="mw-930">
+        <h2 class="page-title">About US</h2>
+      </div>
 
-              <div class="pb-3"></div>
-
-              <div class="form-floating mb-3">
-                <input id="mobile" type="text" class="form-control form-control_gray " name="mobile" value=""
-                  required="" autocomplete="mobile">
-                <label for="mobile">Mobile *</label>
-              </div>
-
-              <div class="pb-3"></div>
-
-              <div class="form-floating mb-3">
-                <input id="password" type="password" class="form-control form-control_gray " name="password" required=""
-                  autocomplete="new-password">
-                <label for="password">Password *</label>
-              </div>
-
-              <div class="form-floating mb-3">
-                <input id="password-confirm" type="password" class="form-control form-control_gray"
-                  name="password_confirmation" required="" autocomplete="new-password">
-                <label for="password">Confirm Password *</label>
-              </div>
-
-              <div class="d-flex align-items-center mb-3 pb-2">
-                <p class="m-0">Your personal data will be used to support your experience throughout this website, to
-                  manage access to your account, and for other purposes described in our privacy policy.</p>
-              </div>
-
-              <button class="btn btn-primary w-100 text-uppercase" type="submit">Register</button>
-
-              <div class="customer-option mt-4 text-center">
-                <span class="text-secondary">Have an account?</span>
-                <a href="login.html" class="btn-text js-show-register">Login to your Account</a>
-              </div>
-            </form>
+      <div class="about-us__content pb-5 mb-5">
+        <p class="mb-5">
+          <img loading="lazy" class="w-100 h-auto d-block" src="images/about/about-1.jpg" width="1410"
+            height="550" alt="" />
+        </p>
+        <div class="mw-930">
+          <h3 class="mb-4">OUR STORY</h3>
+          <p class="fs-6 fw-medium mb-4">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
+            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
+            mollit anim id est laborum.</p>
+          <p class="mb-4">Saw wherein fruitful good days image them, midst, waters upon, saw. Seas lights seasons.
+            Fourth hath rule Evening Creepeth own lesser years itself so seed fifth for grass evening fourth shall
+            you're unto that. Had. Female replenish for yielding so saw all one to yielding grass you'll air sea it,
+            open waters subdue, hath. Brought second Made. Be. Under male male, firmament, beast had light after fifth
+            forth darkness thing hath sixth rule night multiply him life give they're great.</p>
+          <div class="row mb-3">
+            <div class="col-md-6">
+              <h5 class="mb-3">Our Mission</h5>
+              <p class="mb-3">Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+            <div class="col-md-6">
+              <h5 class="mb-3">Our Vision</h5>
+              <p class="mb-3">Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+            </div>
+          </div>
+        </div>
+        <div class="mw-930 d-lg-flex align-items-lg-center">
+          <div class="image-wrapper col-lg-6">
+            <img class="h-auto" loading="lazy" src="images/about/about-1.jpg" width="450" height="500" alt="">
+          </div>
+          <div class="content-wrapper col-lg-6 px-lg-4">
+            <h5 class="mb-3">The Company</h5>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet sapien dignissim a elementum. Sociis metus,
+              hendrerit mauris id in. Quis sit sit ultrices tincidunt euismod luctus diam. Turpis sodales orci etiam
+              phasellus lacus id leo. Amet turpis nunc, nulla massa est viverra interdum. Praesent auctor nulla morbi
+              non posuere mattis. Arcu eu id maecenas cras.</p>
           </div>
         </div>
       </div>
     </section>
+
+
   </main>
-
   <hr class="mt-5 text-secondary" />
-
-
   <div id="scrollTop" class="visually-hidden end-0"></div>
   <div class="page-overlay"></div>
 @endsection

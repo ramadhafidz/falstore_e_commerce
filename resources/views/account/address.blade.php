@@ -245,7 +245,7 @@
 
       <div class="logo">
         <a href="index.html">
-          <img src="assets/images/logo.png" alt="Uomo" class="logo__image d-block" />
+          <img src="images/logo.png" alt="Uomo" class="logo__image d-block" />
         </a>
       </div>
 
@@ -358,66 +358,51 @@
       </div>
     </nav>
   </div>
-
   <main class="pt-90">
     <div class="mb-4 pb-4"></div>
-    <section class="login-register container">
-      <ul class="nav nav-tabs mb-5" id="login_register" role="tablist">
-        <li class="nav-item" role="presentation">
-          <a class="nav-link nav-link_underscore active" id="register-tab" data-bs-toggle="tab"
-            href="#tab-item-register" role="tab" aria-controls="tab-item-register" aria-selected="true">Register</a>
-        </li>
-      </ul>
-      <div class="tab-content pt-2" id="login_register_tab_content">
-        <div class="tab-pane fade show active" id="tab-item-register" role="tabpanel" aria-labelledby="register-tab">
-          <div class="register-form">
-            <form method="POST" action="#" name="register-form" class="needs-validation" novalidate="">
-              <div class="form-floating mb-3">
-                <input class="form-control form-control_gray " name="name" value="" required="" autocomplete="name"
-                  autofocus="">
-                <label for="name">Name</label>
+    <section class="my-account container">
+      <h2 class="page-title">Addresses</h2>
+      <div class="row">
+        <div class="col-lg-3">
+          <ul class="account-nav">
+            <li><a href="my-account.html" class="menu-link menu-link_us-s menu-link_active">Dashboard</a></li>
+            <li><a href="account-orders.html" class="menu-link menu-link_us-s">Orders</a></li>
+            <li><a href="account-address.html" class="menu-link menu-link_us-s">Addresses</a></li>
+            <li><a href="account-details.html" class="menu-link menu-link_us-s">Account Details</a></li>
+            <li><a href="account-wishlist.html" class="menu-link menu-link_us-s">Wishlist</a></li>
+            <li><a href="login.html" class="menu-link menu-link_us-s">Logout</a></li>
+          </ul>
+        </div>
+        <div class="col-lg-9">
+          <div class="page-content my-account__address">
+            <div class="row">
+              <div class="col-6">
+                <p class="notice">The following addresses will be used on the checkout page by default.</p>
               </div>
-              <div class="pb-3"></div>
-              <div class="form-floating mb-3">
-                <input id="email" type="email" class="form-control form-control_gray " name="email" value="" required=""
-                  autocomplete="email">
-                <label for="email">Email address *</label>
+              <div class="col-6 text-right">
+                <a href="#" class="btn btn-sm btn-info">Add New</a>
               </div>
+            </div>
+            <div class="my-account__address-list row">
+              <h5>Shipping Address</h5>
 
-              <div class="pb-3"></div>
-
-              <div class="form-floating mb-3">
-                <input id="mobile" type="text" class="form-control form-control_gray " name="mobile" value=""
-                  required="" autocomplete="mobile">
-                <label for="mobile">Mobile *</label>
+              <div class="my-account__address-item col-md-6">
+                <div class="my-account__address-item__title">
+                  <h5>Sudhir Kumar <i class="fa fa-check-circle text-success"></i></h5>
+                  <a href="#">Edit</a>
+                </div>
+                <div class="my-account__address-item__detail">
+                  <p>Flat No - 13, R. K. Wing - B</p>
+                  <p>ABC, DEF</p>
+                  <p>GHJ, </p>
+                  <p>Near Sun Temple</p>
+                  <p>000000</p>
+                  <br>
+                  <p>Mobile : 1234567891</p>
+                </div>
               </div>
-
-              <div class="pb-3"></div>
-
-              <div class="form-floating mb-3">
-                <input id="password" type="password" class="form-control form-control_gray " name="password" required=""
-                  autocomplete="new-password">
-                <label for="password">Password *</label>
-              </div>
-
-              <div class="form-floating mb-3">
-                <input id="password-confirm" type="password" class="form-control form-control_gray"
-                  name="password_confirmation" required="" autocomplete="new-password">
-                <label for="password">Confirm Password *</label>
-              </div>
-
-              <div class="d-flex align-items-center mb-3 pb-2">
-                <p class="m-0">Your personal data will be used to support your experience throughout this website, to
-                  manage access to your account, and for other purposes described in our privacy policy.</p>
-              </div>
-
-              <button class="btn btn-primary w-100 text-uppercase" type="submit">Register</button>
-
-              <div class="customer-option mt-4 text-center">
-                <span class="text-secondary">Have an account?</span>
-                <a href="login.html" class="btn-text js-show-register">Login to your Account</a>
-              </div>
-            </form>
+              <hr>
+            </div>
           </div>
         </div>
       </div>
@@ -425,8 +410,6 @@
   </main>
 
   <hr class="mt-5 text-secondary" />
-
-
   <div id="scrollTop" class="visually-hidden end-0"></div>
   <div class="page-overlay"></div>
 @endsection

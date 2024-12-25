@@ -64,12 +64,14 @@ class AuthController extends Controller
 
     public function logout(Request $request)
     {
+        logger('Authenticated user:', [$request->user()]);
         $request->user()->tokens()->delete();
 
         return response()->json([
-            'message' => 'Logged out successfully',
+            'message' => 'Logout successful',
         ], 200);
     }
+
 
     public function rememberPassword(Request $request)
     {
