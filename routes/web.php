@@ -22,6 +22,8 @@ Route::view('/wishlist', 'wishlist');
 Route::view('/product', 'details');
 Route::view('/shop', 'shop');
 Route::view('/contact', 'contact');
+Route::view('/login', 'auth.login');
+Route::view('/register', 'auth.register');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
