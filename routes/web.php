@@ -8,10 +8,22 @@ Route::get('/', function () {
 });
 
 Route::view('/account', 'account.index');
+Route::view('/account/address', 'account.address');
+Route::view('/account/address/form', 'account.address-form');
 Route::view('/account/order', 'account.order');
+Route::view('/account/order/detail', 'account.order-detail');
+Route::view('/account/wishlist', 'account.wishlist');
+Route::view('/account/review', 'account.review');
 Route::view('/cart', 'cart.index');
+Route::view('/cart/confirm', 'cart.confirm');
+Route::view('/cart/checkout', 'cart.checkout');
 Route::view('/about', 'about');
+Route::view('/wishlist', 'wishlist');
+Route::view('/product', 'details');
 Route::view('/shop', 'shop');
+Route::view('/contact', 'contact');
+Route::view('/login', 'auth.login');
+Route::view('/register', 'auth.register');
 
 Route::get('/dashboard', function () {
     return view('dashboard');

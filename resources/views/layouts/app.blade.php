@@ -5,17 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <meta http-equiv="content-type" content="text/html; charset=utf-8" />
     <meta name="author" content="surfside media" />
-    <link rel="shortcut icon" href="images/favicon.ico" type="image/x-icon">
+    <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.gstatic.com/">
     <link
         href="https://fonts.googleapis.com/css2?family=Jost:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&amp;display=swap"
         rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Allura&amp;display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="{{ asset('css/swiper.min.css') }}" type="text/css" />
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}" type="text/css" />
-    <link rel="stylesheet" href="{{ asset('css/custom.css') }}" type="text/css" />
-    <link rel="stylesheet" href="{{ asset('css/tabel.css') }}" type="text/css" />
-    <link rel="stylesheet" href="{{ asset('css/detail.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{asset('css/swiper.min.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{asset('css/style.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{asset('css/custom.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{asset('css/tabel.css') }}" type="text/css" />
+    <link rel="stylesheet" href="{{asset('css/detail.css') }}" type="text/css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"
         integrity="sha512-SfTiTlX6kk+qitfevl/7LibUOeJWlt9rbyDn92a1DqWOw9vWG2MFoays0sgObmWazO5BQPiFucnnEAjpAB+/Sw=="
         crossorigin="anonymous" referrerpolicy="no-referrer">
@@ -26,7 +26,7 @@
         <div class="header-desk header-desk_type_1">
             <div class="logo">
             <a href="index.html">
-                <img src="images/logo.png" alt="Uomo" class="logo__image d-block" />
+                <img src="{{asset('images/logo.png') }}" alt="Uomo" class="logo__image d-block" />
             </a>
             </div>
 
@@ -130,7 +130,7 @@
         <div class="footer-column footer-store-info col-12 mb-4 mb-lg-0">
           <div class="logo">
             <a href="index.html">
-              <img src="images/logo.png" alt="SurfsideMedia" class="logo__image d-block" />
+              <img src="{{asset('images/logo.png') }}" alt="SurfsideMedia" class="logo__image d-block" />
             </a>
           </div>
           <p class="footer-address">123 Beach Avenue, Surfside City, CA 00000</p>
@@ -276,11 +276,11 @@
       </div>
     </div>
     </footer>
-    <script src="{{ asset('js/jquery.min.js') }}"></script>
-    <script src="js/bootstrap.bundle.min.js"></script>
-    <script src="js/bootstrap-slider.min.js"></script>
-    <script src="js/swiper.min.js"></script>
-    <script src="js/countdown.js"></script>
-    <script src="js/theme.js"></script>
+    <script src="{{asset('js/jquery.min.js') }}"></script>
+    <script src="{{asset('js/bootstrap.bundle.min.js') }}"></script>
+    <script src="{{asset('js/bootstrap-slider.js') }}"></script>
+    <script src="{{asset('js/swiper.min.js') }}"></script>
+    <script src="{{asset('js/countdown.js') }}"></script>
+    <script src="{{asset('js/theme.js') }}"></script>
 </body>
 </html>

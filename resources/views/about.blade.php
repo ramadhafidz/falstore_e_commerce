@@ -245,7 +245,7 @@
 
       <div class="logo">
         <a href="index.html">
-          <img src="images/logo.png" alt="Uomo" class="logo__image d-block" />
+          <img src="{{ asset('images/logo.png') }}" alt="Uomo" class="logo__image d-block" />
         </a>
       </div>
 
@@ -367,7 +367,7 @@
 
       <div class="about-us__content pb-5 mb-5">
         <p class="mb-5">
-          <img loading="lazy" class="w-100 h-auto d-block" src="images/about/about-1.jpg" width="1410"
+          <img loading="lazy" class="w-100 h-auto d-block" src="{{ asset('images/about/about-1.jpg') }}" width="1410"
             height="550" alt="" />
         </p>
         <div class="mw-930">
@@ -393,7 +393,7 @@
         </div>
         <div class="mw-930 d-lg-flex align-items-lg-center">
           <div class="image-wrapper col-lg-6">
-            <img class="h-auto" loading="lazy" src="images/about/about-1.jpg" width="450" height="500" alt="">
+            <img class="h-auto" loading="lazy" src="{{ asset('images/about/about-1.jpg') }}" width="450" height="500" alt="">
           </div>
           <div class="content-wrapper col-lg-6 px-lg-4">
             <h5 class="mb-3">The Company</h5>
