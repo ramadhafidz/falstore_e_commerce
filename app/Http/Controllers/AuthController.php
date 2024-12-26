@@ -6,25 +6,31 @@ use Illuminate\Http\Request;
 // use Illuminate\Support\Facades\Auth;
 use App\Models\User;
 use Illuminate\Support\Facades\Hash;
+use Illuminate\Support\Facades\Log;
 // use Illuminate\Validation\ValidationException;
 
 class AuthController extends Controller
 {
     public function register(Request $request)
     {
+        dd($request->all());
         $validatedData = $request->validate([
             'nama' => 'required|string|max:255',
             'username' => 'required|string|max:255|unique:users',
             'email' => 'required|email|unique:users',
-            'password' => 'required|string|min:6',
+            'password' => 'required|string|min:6|confirmed',
+            'phone_number' => 'required|string|regex:/^\+?\d{1,3}?[-.\s]?\(?\d{1,4}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/'
         ]);
+
+        Log::info($validatedData);
 
         $user = User::create([
             'nama' => $request->nama,
             'username' => $request->username,
             'email' => $request->email,
             'password' => Hash::make($request->password),
-            'role' => 'user', // Default role
+            'phone_number' => $request->phone_number,
+            'role' => 'user',
         ]);
 
         $token = $user->createToken('auth_token')->plainTextToken;
@@ -35,6 +41,13 @@ class AuthController extends Controller
             'token_type' => 'Bearer',
             'user' => $user,
         ], 201);
+
+        return redirect()->route('login')->with('success', 'Registration successful!');
+    }
+
+    public function showRegisterForm()
+    {
+        return view('auth.register'); // Sesuaikan dengan nama file view kamu
     }
 
     public function login(Request $request)

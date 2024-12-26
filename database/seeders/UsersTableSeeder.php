@@ -19,7 +19,8 @@ class UsersTableSeeder extends Seeder
                 'nama' => 'Admin',
                 'username' => 'admin',
                 'email' => 'admin@falstore.com',
-                'password' => Hash::make('password'), // Hash pw biar aman
+                'password' => Hash::make('admin123'), // Hash pw biar aman
+                'phone_number' => '+6281234567890',
                 'role' => 'admin',
                 'created_at' => now(),
                 'updated_at' => now(),
@@ -28,7 +29,8 @@ class UsersTableSeeder extends Seeder
                 'nama' => 'User',
                 'username' => 'user',
                 'email' => 'user@falstore.com',
-                'password' => Hash::make('password'),
+                'password' => Hash::make('user123'),
+                'phone_number' => '+628987654321',
                 'role' => 'user',
                 'created_at' => now(),
                 'updated_at' => now(),

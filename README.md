@@ -1,6 +1,6 @@
 # FALSTORE E-COMMERCE
 
-![Falstore Logo](falstore-logo.png)
+![Falstore Logo](public/images/logo.png)
 
 ## Deskripsi
 Laravel E-Commerce adalah sebuah aplikasi web e-commerce berbasis framework Laravel yang menyediakan fitur lengkap untuk mengelola toko online. Aplikasi ini dirancang untuk memberikan pengalaman belanja online yang mudah dan nyaman bagi pengguna.
@@ -88,10 +88,10 @@ Laravel E-Commerce adalah sebuah aplikasi web e-commerce berbasis framework Lara
 - Rifaldi Abyansyah ([Sifalrei](https://github.com/Sifalrei))
 - Ismet Maulana Azhari ([IsmetMaulanaAzhari](https://github.com/IsmetMaulanaAzhari))
 - Royhan Muhammad Al Biruni ([RoyhanAB](https://github.com/RoyhanAB))
-- Gathan Rafii Manaf ([ss](https://github.com/))
+- Gathan Rafii Manaf ([Gath-an](https://github.com/Gath-an/))
 
-## Lisensi
-Proyek ini dilisensikan di bawah [MIT License](LICENSE).
+<!-- ## Lisensi
+Proyek ini dilisensikan di bawah [MIT License](LICENSE). -->
 
 ## Kontak
-Jika Anda memiliki pertanyaan atau masukan, silakan hubungi saya di email@example.com.
+Jika Anda memiliki pertanyaan atau masukan, silakan hubungi saya di 3337230014@untirta.ac.id
