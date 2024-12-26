@@ -7,7 +7,7 @@
   @include('components.svgicons')
 
   @push('styles')
-    <link rel="stylesheet" href="{{ asset('css/about.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/addons.css') }}">
   @endpush
 
   <main class="pt-90">
@@ -19,8 +19,7 @@
 
       <div class="about-us__content pb-5 mb-5">
         <p class="mb-5">
-          <img loading="lazy" class="w-100 h-auto d-block" src="{{ asset('images/about/about-1.jpg') }}" width="1410" height="550"
-            alt="" />
+          <img loading="lazy" class="w-100 h-auto d-block" src="{{ asset('images/about/about-1.jpg') }}" width="1410" height="550" alt="" />
         </p>
         <div class="mw-930">
           <h3 class="mb-4">OUR STORY</h3>

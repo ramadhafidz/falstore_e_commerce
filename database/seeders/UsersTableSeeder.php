@@ -16,21 +16,21 @@ class UsersTableSeeder extends Seeder
     {
         DB::table('users')->insert([
             [
-                'nama' => 'Admin',
-                'username' => 'admin',
+                'name' => 'Admin',
+                // 'username' => 'admin',
                 'email' => 'admin@falstore.com',
                 'password' => Hash::make('admin123'), // Hash pw biar aman
-                'phone_number' => '+6281234567890',
+                // 'phone_number' => '+6281234567890',
                 'role' => 'admin',
                 'created_at' => now(),
                 'updated_at' => now(),
             ],
             [
-                'nama' => 'User',
-                'username' => 'user',
+                'name' => 'User',
+                // 'username' => 'user',
                 'email' => 'user@falstore.com',
                 'password' => Hash::make('user123'),
-                'phone_number' => '+628987654321',
+                // 'phone_number' => '+628987654321',
                 'role' => 'user',
                 'created_at' => now(),
                 'updated_at' => now(),

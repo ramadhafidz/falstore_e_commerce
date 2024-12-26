@@ -73,11 +73,19 @@
         </div>
 
         <div class="header-tools__item hover-container">
-          <a href="login.html" class="header-tools__item">
-            <svg class="d-block" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-              <use href="#icon_user" />
-            </svg>
-          </a>
+          @if (auth()->check())
+            <a href="{{ route('account') }}" class="header-tools__item">
+              <svg class="d-block" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <use href="#icon_user" />
+              </svg>
+            </a>
+          @else
+            <a href="{{ route('login') }}" class="header-tools__item">
+              <svg class="d-block" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <use href="#icon_user" />
+              </svg>
+            </a>
+          @endif
         </div>
 
         <a href="{{ route('wishlist') }}" class="header-tools__item">
@@ -92,6 +100,22 @@
           </svg>
           <span class="cart-amount d-block position-absolute js-cart-items-count">3</span>
         </a>
+
+        @if (auth()->check())
+          <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+            @csrf
+            <button type="submit" style="background: transparent; border: none; cursor: pointer;">
+              <svg viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg" width="24" height="24">
+                <g>
+                  <path d="M0 0h24v24H0z" fill="none" />
+                  <path d="M5 22a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h14a1 1 0 0 1 1 1v3h-2V4H6v16h12v-2h2v3a1 1 0 0 1-1 1H5zm13-6v-3h-7v-2h7V8l5 4-5 4z"
+                    fill="red" />
+                </g>
+              </svg>
+            </button>
+          </form>
+        @endif
+
       </div>
     </div>
   </div>
