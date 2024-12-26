@@ -8,24 +8,25 @@ Route::view('/shop', 'shop')->name('shop');
 Route::view('/about', 'about')->name('about');
 Route::view('/contact', 'contact')->name('contact');
 Route::view('/cart', 'cart.index')->name('cart');
+Route::view('/wishlist', 'wishlist')->name('wishlist');
 Route::view('/account', 'account.index')->name('account');
+Route::view('/account/order', 'account.order')->name('order');
+Route::view('/account/address', 'account.address')->name('address');
+Route::view('/account/address/change', 'account.details')->name('change');
+Route::view('/account/address/form', 'account.address-form')->name('new');
+Route::view('/account/wishlist', 'account.wishlist')->name('awish');
 
 
 // Route::get('/register', [AuthController::class, 'showRegisterForm'])->name('register.form');
 Route::post('/register', [AuthController::class, 'register'])->name('register');
 
-Route::view('/account/address', 'account.address');
-Route::view('/account/address/form', 'account.address-form');
-Route::view('/account/order', 'account.order');
 Route::view('/account/order/detail', 'account.order-detail');
-Route::view('/account/wishlist', 'account.wishlist');
 Route::view('/account/review', 'account.review');
 Route::view('/cart/confirm', 'cart.confirm');
 Route::view('/cart/checkout', 'cart.checkout');
-Route::view('/wishlist', 'wishlist');
 Route::view('/product', 'details');
-Route::view('/login', 'auth.login');
 Route::view('/admin', 'admin.index');
+Route::view('/login', 'auth.login');
 Route::view('/admin/add/brand', 'admin.add.brand');
 
 Route::get('/dashboard', function () {
