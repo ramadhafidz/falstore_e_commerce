@@ -24,22 +24,28 @@
         </p>
         <div class="mw-930">
           <h3 class="mb-4">OUR STORY</h3>
-          <p class="fs-6 fw-medium mb-4">Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu
-            fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt
-            mollit anim id est laborum.</p>
-          <p class="mb-4">Saw wherein fruitful good days image them, midst, waters upon, saw. Seas lights seasons.
-            Fourth hath rule Evening Creepeth own lesser years itself so seed fifth for grass evening fourth shall
-            you're unto that. Had. Female replenish for yielding so saw all one to yielding grass you'll air sea it,
-            open waters subdue, hath. Brought second Made. Be. Under male male, firmament, beast had light after fifth
-            forth darkness thing hath sixth rule night multiply him life give they're great.</p>
+          <p class="fs-6 fw-medium mb-4">Retail kami tercipta dari 5 orang teman yang memiliki visi bersama untuk 
+            menciptakan sebuah usaha yang memberikan dampak positif. Dari ide sederhana, kami mendirikan toko ini
+            dengan tujuan menyediakan pakaian berkualitas tinggi dan elegan, yang dapat diakses oleh semua orang.
+            Kami percaya bahwa pakaian bukan hanya sekadar kebutuhan, tetapi juga merupakan cerminan dari karakter
+            dan gaya hidup seseorang.</p>
+          <p class="mb-4">Dengan produk kami, kami yakin dapat bersaing dengan Retail maupun E-Commerce lainnya dalam
+            segi kualitas, keunikan desain, dan kepuasan pelanggan. Kami menawarkan pakaian yang tidak hanya memenuhi
+            standar kualitas tinggi tetapi juga memiliki nilai estetika. Dengan fokus pada kebutuhan pelanggan dan inovasi,
+            kami percaya bahwa toko kami dapat menjadi pilihan utama bagi mereka yang menginginkan pakaian berkualitas dengan
+            harga yang kompetitif.</p>
           <div class="row mb-3">
             <div class="col-md-6">
               <h5 class="mb-3">Our Mission</h5>
-              <p class="mb-3">Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p class="mb-3">Misi kami adalah menyediakan pakaian berkualitas terbaik dengan desain elegan dari brand-brand
+                kelas menengah ke atas. Kami ingin memastikan pelanggan mendapatkan pengalaman berbelanja yang menyenangkan
+                dengan produk yang mencerminkan nilai estetika dan kualitas.</p>
             </div>
             <div class="col-md-6">
               <h5 class="mb-3">Our Vision</h5>
-              <p class="mb-3">Quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.</p>
+              <p class="mb-3">Visi kami adalah menjadi toko pakaian yang diakui secara luas karena kualitas produk, desain yang
+                beragam, dan layanan yang memuaskan. Kami bercita-cita menjadi pilihan utama bagi pelanggan yang mencari kombinasi
+                sempurna antara kenyamanan, gaya, dan nilai.</p>
             </div>
           </div>
         </div>
@@ -49,10 +55,9 @@
           </div>
           <div class="content-wrapper col-lg-6 px-lg-4">
             <h5 class="mb-3">The Company</h5>
-            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Amet sapien dignissim a elementum. Sociis metus,
-              hendrerit mauris id in. Quis sit sit ultrices tincidunt euismod luctus diam. Turpis sodales orci etiam
-              phasellus lacus id leo. Amet turpis nunc, nulla massa est viverra interdum. Praesent auctor nulla morbi
-              non posuere mattis. Arcu eu id maecenas cras.</p>
+            <p>Toko kami berdiri dengan semangat kolaborasi dan komitmen dari lima teman yang berbagi mimpi yang sama. Dengan
+              fokus pada pakaian berkualitas tinggi, kami menghadirkan berbagai pilihan dari brand-brand terpercaya untuk memenuhi
+              kebutuhan gaya hidup modern. Kami terus tumbuh bersama pelanggan dan berkomitmen untuk memberikan yang terbaik.</p>
           </div>
         </div>
       </div>

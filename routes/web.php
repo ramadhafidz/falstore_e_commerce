@@ -25,6 +25,8 @@ Route::view('/cart/checkout', 'cart.checkout');
 Route::view('/wishlist', 'wishlist');
 Route::view('/product', 'details');
 Route::view('/login', 'auth.login');
+Route::view('/admin', 'admin.index');
+Route::view('/admin/add/brand', 'admin.add.brand');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
