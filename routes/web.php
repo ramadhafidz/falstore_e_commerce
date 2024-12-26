@@ -6,11 +6,6 @@ use app\Http\Controllers\AuthController;
 Route::get('/', function () {
     return view('index');
 })->name('home');
-
-Route::view('/shop', 'shop')->name('shop');
-Route::view('/about', 'about')->name('about');
-Route::view('/contact', 'contact')->name('contact');
-
 // Auth
 Route::get('/login', [AuthController::class, 'showLoginForm'])->name('login');
 Route::post('/login', [AuthController::class, 'login']);
@@ -22,22 +17,18 @@ Route::get('/login', function () {
 // Nanti dibawah sini hapus
 Route::middleware('auth:sanctum')->group(function () {
     // Account
-    Route::view('/account', 'account.index')->name('account');
-    Route::view('/account/address', 'account.address')->name('account.address');
-    Route::view('/account/address/form', 'account.address-form')->name('account.address.form');
-    Route::view('/account/order', 'account.order');
-    Route::view('/account/order/detail', 'account.order-detail');
-    Route::view('/account/wishlist', 'account.wishlist');
-    Route::view('/account/review', 'account.review');
-
-    // Cart
-    Route::view('/cart', 'cart.index');
-    Route::view('/cart/confirm', 'cart.confirm');
-    Route::view('/cart/checkout', 'cart.checkout');
-
-    // Others
-    Route::view('/wishlist', 'wishlist');
-    Route::view('/product', 'details');
+    
+Route::view('/shop', 'shop')->name('shop');
+Route::view('/about', 'about')->name('about');
+Route::view('/contact', 'contact')->name('contact');
+Route::view('/cart', 'cart.index')->name('cart');
+Route::view('/wishlist', 'wishlist')->name('wishlist');
+Route::view('/account', 'account.index')->name('account');
+Route::view('/account/order', 'account.order')->name('order');
+Route::view('/account/address', 'account.address')->name('address');
+Route::view('/account/address/change', 'account.details')->name('change');
+Route::view('/account/address/form', 'account.address-form')->name('new');
+Route::view('/account/wishlist', 'account.wishlist')->name('awish');
 });
 
 require __DIR__ . '/auth.php';

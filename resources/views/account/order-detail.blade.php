@@ -41,7 +41,7 @@
                 <h5>Ordered Details</h5>
               </div>
               <div class="col-6 text-right">
-                <a class="btn btn-sm btn-danger" href="http://localhost:8000/account-orders">Back</a>
+                <a class="btn btn-sm btn-danger" href="{{ route('order') }}">Back</a>
               </div>
             </div>
             <div class="table-responsive">
