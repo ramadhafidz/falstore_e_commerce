@@ -21,16 +21,21 @@ Route::get('/login', function () {
 
 // Nanti dibawah sini hapus
 Route::middleware('auth:sanctum')->group(function () {
-    Route::view('/account', 'account.index');
-    Route::view('/account/address', 'account.address');
-    Route::view('/account/address/form', 'account.address-form');
+    // Account
+    Route::view('/account', 'account.index')->name('account');
+    Route::view('/account/address', 'account.address')->name('account.address');
+    Route::view('/account/address/form', 'account.address-form')->name('account.address.form');
     Route::view('/account/order', 'account.order');
     Route::view('/account/order/detail', 'account.order-detail');
     Route::view('/account/wishlist', 'account.wishlist');
     Route::view('/account/review', 'account.review');
+
+    // Cart
     Route::view('/cart', 'cart.index');
     Route::view('/cart/confirm', 'cart.confirm');
     Route::view('/cart/checkout', 'cart.checkout');
+
+    // Others
     Route::view('/wishlist', 'wishlist');
     Route::view('/product', 'details');
 });
