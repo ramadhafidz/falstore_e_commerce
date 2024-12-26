@@ -23,7 +23,7 @@
         </p>
         <div class="mw-930">
           <h3 class="mb-4">OUR STORY</h3>
-          <p class="fs-6 fw-medium mb-4">Retail kami tercipta dari 5 orang teman yang memiliki visi bersama untuk 
+          <p class="fs-6 fw-medium mb-4">Retail kami tercipta dari 5 orang teman yang memiliki visi bersama untuk
             menciptakan sebuah usaha yang memberikan dampak positif. Dari ide sederhana, kami mendirikan toko ini
             dengan tujuan menyediakan pakaian berkualitas tinggi dan elegan, yang dapat diakses oleh semua orang.
             Kami percaya bahwa pakaian bukan hanya sekadar kebutuhan, tetapi juga merupakan cerminan dari karakter
