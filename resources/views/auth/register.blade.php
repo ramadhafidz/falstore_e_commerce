@@ -7,7 +7,7 @@
   @include('components.svgicons')
 
   @push('styles')
-    <link rel="stylesheet" href="{{ asset('css/about.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/addons.css') }}">
   @endpush
 
   <main class="pt-90">
@@ -25,8 +25,8 @@
             <form method="POST" action="{{ route('register') }}" name="register" class="needs-validation" novalidate="" autocomplete="on">
               @csrf
               <div class="form-floating mb-3">
-                <input id="name" class="form-control form-control_gray @error('name') is-invalid @enderror" name="name" value="{{ old('name') }}"
-                  required=""/>
+                <input id="name" class="form-control form-control_gray @error('name') is-invalid @enderror" name="name"
+                  value="{{ old('name') }}" required="" />
                 <label for="name">Name</label>
                 @error('name')
                   <span class="error-message">{{ $message }}</span>
@@ -42,7 +42,8 @@
               </div> --}}
 
               <div class="form-floating mb-3">
-                <input id="email" type="email" class="form-control form-control_gray @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" required=""/>
+                <input id="email" type="email" class="form-control form-control_gray @error('email') is-invalid @enderror" name="email"
+                  value="{{ old('email') }}" required="" />
                 <label for="email">Email address *</label>
                 @error('email')
                   <span class="error-message">{{ $message }}</span>
