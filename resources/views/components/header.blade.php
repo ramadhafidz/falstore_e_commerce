@@ -92,6 +92,16 @@
           </svg>
           <span class="cart-amount d-block position-absolute js-cart-items-count">3</span>
         </a>
+
+        @if(auth()->check())
+            <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                @csrf
+                <button type="submit" class="btn btn-danger">Logout</button>
+            </form>
+        @else
+          <a href="{{ route('login') }}" class="btn btn-primary">Login</a>
+          <a href="{{ route('register') }}" class="btn btn-secondary">Register</a>
+        @endif
       </div>
     </div>
   </div>

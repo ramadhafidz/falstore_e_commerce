@@ -15,25 +15,24 @@ class AuthController extends Controller
     {
         dd($request->all());
         $validatedData = $request->validate([
-            'nama' => 'required|string|max:255',
-            'username' => 'required|string|max:255|unique:users',
+            'name' => 'required|string|max:255',
+            // 'username' => 'required|string|max:255|unique:users',
             'email' => 'required|email|unique:users',
             'password' => 'required|string|min:6|confirmed',
-            'phone_number' => 'required|string|regex:/^\+?\d{1,3}?[-.\s]?\(?\d{1,4}?\)?[-.\s]?\d{1,4}[-.\s]?\d{1,4}[-.\s]?\d{1,9}$/'
+            // 'phone_number' => 'required|string|max:15'
         ]);
 
-        Log::info($validatedData);
-
         $user = User::create([
-            'nama' => $request->nama,
-            'username' => $request->username,
-            'email' => $request->email,
-            'password' => Hash::make($request->password),
-            'phone_number' => $request->phone_number,
+            'name' => $validatedData['name'],
+            // 'username' => $validatedData['username'],
+            'email' => $validatedData['email'],
+            'password' => Hash::make($validatedData['password']),
+            // 'phone_number' => $validatedData['phone_number'],
             'role' => 'user',
         ]);
 
         $token = $user->createToken('auth_token')->plainTextToken;
+        return redirect()->route('login')->with('message', 'Register successful');
 
         return response()->json([
             'message' => 'User registered successfully!',
@@ -41,13 +40,11 @@ class AuthController extends Controller
             'token_type' => 'Bearer',
             'user' => $user,
         ], 201);
-
-        return redirect()->route('login')->with('success', 'Registration successful!');
     }
 
     public function showRegisterForm()
     {
-        return view('auth.register'); // Sesuaikan dengan nama file view kamu
+        return view('auth.register');
     }
 
     public function login(Request $request)
@@ -72,17 +69,27 @@ class AuthController extends Controller
             'token_type' => 'Bearer',
             'user' => $user,
         ], 200);
+
+        return redirect()->route('home');
     }
 
 
     public function logout(Request $request)
     {
-        logger('Authenticated user:', [$request->user()]);
-        $request->user()->tokens()->delete();
+        $request->user()->tokens->each(function ($token) {
+            $token->delete();
+        });
 
         return response()->json([
             'message' => 'Logout successful',
         ], 200);
+
+        return redirect('/')->with('message', 'Logout successful');
+    }
+
+    public function showLoginForm()
+    {
+        return view('auth.login');
     }
 
 
