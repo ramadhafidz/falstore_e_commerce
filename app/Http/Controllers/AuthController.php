@@ -64,6 +64,12 @@ class AuthController extends Controller
 
         $token = $user->createToken('auth_token', ['*'])->plainTextToken;
 
+        if ($user->role == 'admin') {
+            return redirect()->route('admin.dashboard');
+        } else {
+            return redirect()->route('home');
+        }
+
         return response()->json([
             'access_token' => $token,
             'token_type' => 'Bearer',

@@ -9,32 +9,23 @@ use Illuminate\Database\Seeder;
 
 class UsersTableSeeder extends Seeder
 {
-    /**
-     * Run the database seeds.
-     */
     public function run(): void
     {
-        DB::table('users')->insert([
-            [
-                'name' => 'Admin',
-                // 'username' => 'admin',
-                'email' => 'admin@falstore.com',
-                'password' => Hash::make('admin123'), // Hash pw biar aman
-                // 'phone_number' => '+6281234567890',
-                'role' => 'admin',
+        $users = [
+            ['name' => 'Admin', 'email' => 'admin@falstore.com', 'password' => 'admin123', 'role' => 'admin',],
+            ['name' => 'User', 'email' => 'user@falstore.com', 'password' => 'user123', 'role' => 'user',],
+            ['name' => 'Hafidz', 'email' => 'hrghiffari@gmail.com', 'password' => 'admin123', 'role' => 'user',],
+        ];
+
+        foreach ($users as $user) {
+            DB::table('users')->insert([
+                'name' => $user['name'],
+                'email' => $user['email'],
+                'password' => Hash::make($user['password']), // pw di hash biar aman
+                'role' => $user['role'],
                 'created_at' => now(),
                 'updated_at' => now(),
-            ],
-            [
-                'name' => 'User',
-                // 'username' => 'user',
-                'email' => 'user@falstore.com',
-                'password' => Hash::make('user123'),
-                // 'phone_number' => '+628987654321',
-                'role' => 'user',
-                'created_at' => now(),
-                'updated_at' => now(),
-            ],
-        ]);
+            ]);
+        }
     }
 }

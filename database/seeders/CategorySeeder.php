@@ -3,65 +3,35 @@
 namespace Database\Seeders;
 
 use Illuminate\Database\Seeder;
-use App\Models\Category;
+use Illuminate\Support\Facades\DB;
 
 class CategorySeeder extends Seeder
 {
     public function run()
     {
-        Category::create([
-            'name' => 'Dresses',
-            'description' => 'Pretty Dressers for elegant dressings',
-        ]);
+        $categories = [
+            ['name' => 'Dresses', 'description' => 'Pretty dresses for elegant dressings'],
+            ['name' => 'Shorts', 'description' => 'Shorts for the day'],
+            ['name' => 'Sweatshirts', 'description' => 'Sweatshirts dedicated to both genders'],
+            ['name' => 'Jackets', 'description' => 'Jackets for style or variety of purposes'],
+            ['name' => 'T-shirt & Tops', 'description' => 'From minimalist to extended style'],
+            ['name' => 'Jeans', 'description' => 'Jeans for the day'],
+            ['name' => 'Trousers', 'description' => 'Perfect for style or comfort'],
+            ['name' => 'Men', 'description' => 'Men’s gears of style'],
+            ['name' => 'Jumpers & Cardigans', 'description' => 'All kinds of jumpers and cardigans'],
+            ['name' => 'Longsleeve', 'description' => 'Longsleeve for style or comfort'],
+            ['name' => 'Hoodies', 'description' => 'Hoodies for the day, night, or evening'],
+        ];
 
-        Category::create([
-            'name' => 'Shorts',
-            'description' => 'Shorts for the day',
-        ]);
+        foreach ($categories as $category) {
+            DB::table('categories')->insert([
+                'name' => $category['name'],
+                'description' => $category['description'],
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]);
 
-        Category::create([
-            'name' => 'Sweatshirts',
-            'description' => 'Sweatshirts dedicated to both genders',
-        ]);
-
-        Category::create([
-            'name' => 'Jackets',
-            'description' => 'Jacket for style or variety of purposes',
-        ]);
-
-        Category::create([
-            'name' => 'T-shirt & Tops',
-            'description' => 'From minimalist to extended style',
-        ]);
-
-        Category::create([
-            'name' => 'Jeans',
-            'description' => 'Jeans for the day',
-        ]);
-
-        Category::create([
-            'name' => 'Trousers',
-            'description' => 'Perfect for style or comfort',
-        ]);
-
-        Category::create([
-            'name' => 'Men',
-            'description' => 'Men’s gears of style',
-        ]);
-
-        Category::create([
-            'name' => 'Jumpers & Cardigans',
-            'description' => 'All kind of jumpers and Cardigans',
-        ]);
-
-        Category::create([
-            'name' => 'Longsleeve',
-            'description' => 'Longsleeve for style or comfort',
-        ]);
-
-        Category::create([
-            'name' => 'Hoodies',
-            'description' => 'Hoodies on the day or night or evening',
-        ]);
+            logger()->info('Inserted category:', $category);
+        }
     }
 }

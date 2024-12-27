@@ -10,8 +10,9 @@ class ProductController extends Controller
 {
     public function index()
     {
-        $products = Product::with('category')->get();
-        return view('products.index', compact('products'));
+        $products = Product::all();
+        // $products = Product::with('category')->get();
+        return view('index', compact('products'));
     }
 
     public function store(Request $request)
@@ -42,7 +43,7 @@ class ProductController extends Controller
             'image' => $imagePath,  // Menyimpan path gambar
         ]);
 
-        return redirect()->route('products.index')->with('success', 'Product created successfully!');
+        return redirect()->route('products.details')->with('success', 'Product created successfully!');
     }
 
     public function show($id)
