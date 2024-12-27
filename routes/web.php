@@ -19,6 +19,9 @@ Route::get('/login', function () {
 Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::view('/admin/dashboard', 'admin.index')->name('admin.dashboard');
     Route::get('/admin/brands',[AdminController::class,'brands'])->name('admin.brands');
+    Route::get('/admin/brand/add',[AdminController::class,'add_brand'])->name('admin.brand.add');
+    Route::post('/admin/brand/store',[AdminController::class,'add_brand_store'])->name('admin.brand.store');
+    Route::view('/admin/brand/product', 'admin.products')->name('admin.brand.products');
 });
 
 // Route::middleware(['auth', 'role:user'])->group(function () {
