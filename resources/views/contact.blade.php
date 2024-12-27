@@ -10,6 +10,8 @@
     <link rel="stylesheet" href="{{ asset('css/addons.css') }}">
   @endpush
 
+  @include('components.mobileheader')
+
   <main class="pt-90">
     <div class="mb-4 pb-4"></div>
     <section class="contact-us container">
@@ -57,4 +59,6 @@
   <hr class="mt-5 text-secondary" />
   <div id="scrollTop" class="visually-hidden end-0"></div>
   <div class="page-overlay"></div>
+
+  @include('components.footer')
 @endsection
