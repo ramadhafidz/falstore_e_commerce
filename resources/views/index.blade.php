@@ -649,12 +649,11 @@
           Featured Products
         </h2>
 
-        <div class="row">
-          {{-- @foreach ($products as $product)
+        {{-- <div class="row">
             <div class="col-6 col-md-4 col-lg-3">
               <div class="product-card product-card_style3 mb-3 mb-md-4 mb-xxl-5">
                 <div class="pc__img-wrapper">
-                  <a href="{{ route('product.details', $product->id) }}">
+                  <a href="#">
                     <img loading="lazy" src="{{ asset('storage/' . $product->image) }}" width="330" height="400" alt="{{ $product->name }}"
                       class="pc__img" />
                   </a>
@@ -662,7 +661,7 @@
 
                 <div class="pc__info position-relative">
                   <h6 class="pc__title">
-                    <a href="{{ route('product.details', $product->id) }}">{{ $product->name }}</a>
+                    <a href="#}">{{ $product->name }}</a>
                   </h6>
                   <div class="product-card__price d-flex align-items-center">
                     <span class="money price text-secondary">${{ number_format($product->price, 2) }}</span>
@@ -670,10 +669,7 @@
                 </div>
               </div>
             </div>
-          @endforeach --}}
-
-
-          {{-- <div class="col-6 col-md-4 col-lg-3">
+          <div class="col-6 col-md-4 col-lg-3">
             <div class="product-card product-card_style3 mb-3 mb-md-4 mb-xxl-5">
               <div class="pc__img-wrapper">
                 <a href="details.html">
@@ -949,8 +945,8 @@
                 </div>
               </div>
             </div>
-          </div> --}}
-        </div>
+          </div>
+        </div> --}}
         <!-- /.row -->
 
         <div class="text-center mt-2">

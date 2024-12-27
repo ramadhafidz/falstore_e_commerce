@@ -2,6 +2,7 @@
 
 use Illuminate\Support\Facades\Route;
 use app\Http\Controllers\AuthController;
+use App\Http\Controllers\AdminController;
 
 Route::get('/', function () {
     return view('index');
@@ -17,6 +18,7 @@ Route::get('/login', function () {
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::view('/admin/dashboard', 'admin.index')->name('admin.dashboard');
+    Route::get('/admin/brands',[AdminController::class,'brands'])->name('admin.brands');
 });
 
 // Route::middleware(['auth', 'role:user'])->group(function () {

@@ -20,7 +20,7 @@
   @stack('styles')
 </head>
 
-<body>
+<body class="body>
 
   @yield('content')
 
