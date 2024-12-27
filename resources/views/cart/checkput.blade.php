@@ -377,7 +377,7 @@
             <em>Checkout Your Items List</em>
           </span>
         </a>
-        <a href="order-confirmation.html" class="checkout-steps__item">
+        <a href="{{ route('cart.complete') }}" class="checkout-steps__item">
           <span class="checkout-steps__item-number">03</span>
           <span class="checkout-steps__item-title">
             <span>Confirmation</span>
@@ -560,7 +560,12 @@
                     policy</a>.
                 </div>
               </div>
-              <button class="btn btn-primary btn-checkout">PLACE ORDER</button>
+              {{-- <button class="btn btn-primary btn-checkout">PLACE ORDER</button> --}}
+              <div class="mobile_fixed-btn_wrapper">
+                <div class="button-wrapper container">
+                  <a href="{{ route('cart.complete') }}" class="btn btn-primary btn-checkout">PLACE ORDER</a>
+                </div>
+              </div>
             </div>
           </div>
         </div>

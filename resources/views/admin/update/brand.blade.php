@@ -310,18 +310,20 @@
                       <i class="icon-chevron-right"></i>
                     </li>
                     <li>
-                      <div class="text-tiny">New Brand</div>
+                      <div class="text-tiny">Edit Brand</div>
                     </li>
                   </ul>
                 </div>
                 <!-- new-category -->
                 <div class="wg-box">
-                  <form class="form-new-product form-style-1" action="{{ route('admin.brand.store') }}" method="POST"
+                  <form class="form-new-product form-style-1" action="{{ route('admin.brand.update') }}" method="POST"
                     enctype="multipart/form-data">
+                    @method('PUT')
                     @csrf
+                    <input type="hidden" name="id" value="{{ $brand->id }}" />
                     <fieldset class="name">
                       <div class="body-title">Brand Name <span class="tf-color-1">*</span></div>
-                      <input class="flex-grow" type="text" placeholder="Brand name" name="name" tabindex="0" value="{{ old('name') }}"
+                      <input class="flex-grow" type="text" placeholder="Brand name" name="name" tabindex="0" value="{{ $brand->name }}"
                         aria-required="true" required="">
                     </fieldset>
 
@@ -331,7 +333,7 @@
 
                     <fieldset class="name">
                       <div class="body-title">Brand Slug <span class="tf-color-1">*</span></div>
-                      <input class="flex-grow" type="text" placeholder="Brand Slug" name="slug" tabindex="0" value="{{ old('slug') }}"
+                      <input class="flex-grow" type="text" placeholder="Brand Slug" name="slug" tabindex="0" value="{{ $brand->slug }}"
                         aria-required="true" required="">
                     </fieldset>
 
@@ -343,9 +345,11 @@
                       <div class="body-title">Upload images <span class="tf-color-1">*</span>
                       </div>
                       <div class="upload-image flex-grow">
-                        <div class="item" id="imgpreview" style="display:none">
-                          <img src="{{ asset('uploads/images/upload-1.png ') }}" alt="Brand Thumbnail">
-                        </div>
+                        @if ($brand->image)
+                          <div class="item" id="imgpreview">
+                            <img src="{{ asset('storage/upload/images/brands') }}/{{ $brand->image }}" alt="{{ $brand->slug }}">
+                          </div>
+                        @endif
                         <div id="upload-file" class="item up-load">
                           <label class="uploadfile" for="myFile">
                             <span class="icon">
@@ -405,5 +409,4 @@
       }
     </script>
   @endpush
-
 @endsection

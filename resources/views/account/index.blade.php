@@ -246,7 +246,7 @@
 
       <div class="logo">
         <a href="index.html">
-          <img src="{{ asset('images/logo.png') }}" alt="Uomo" class="logo__image d-block" />
+          <img src="{{ asset('images/logo.png') }}" alt="Uomo" class="logo__image d-block" />
         </a>
       </div>
 
@@ -258,16 +258,13 @@
       </a>
     </div>
 
-    <nav
-      class="header-mobile__navigation navigation d-flex flex-column w-100 position-absolute top-100 bg-body overflow-auto">
+    <nav class="header-mobile__navigation navigation d-flex flex-column w-100 position-absolute top-100 bg-body overflow-auto">
       <div class="container">
         <form action="#" method="GET" class="search-field position-relative mt-4 mb-3">
           <div class="position-relative">
-            <input class="search-field__input w-100 border rounded-1" type="text" name="search-keyword"
-              placeholder="Search products" />
+            <input class="search-field__input w-100 border rounded-1" type="text" name="search-keyword" placeholder="Search products" />
             <button class="btn-icon search-popup__submit pb-0 me-2" type="submit">
-              <svg class="d-block" width="20" height="20" viewBox="0 0 20 20" fill="none"
-                xmlns="http://www.w3.org/2000/svg">
+              <svg class="d-block" width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <use href="#icon_search" />
               </svg>
             </button>
@@ -316,32 +313,28 @@
         <ul class="container social-links list-unstyled d-flex flex-wrap mb-0">
           <li>
             <a href="#" class="footer__social-link d-block ps-0">
-              <svg class="svg-icon svg-icon_facebook" width="9" height="15" viewBox="0 0 9 15"
-                xmlns="http://www.w3.org/2000/svg">
+              <svg class="svg-icon svg-icon_facebook" width="9" height="15" viewBox="0 0 9 15" xmlns="http://www.w3.org/2000/svg">
                 <use href="#icon_facebook" />
               </svg>
             </a>
           </li>
           <li>
             <a href="#" class="footer__social-link d-block">
-              <svg class="svg-icon svg-icon_twitter" width="14" height="13" viewBox="0 0 14 13"
-                xmlns="http://www.w3.org/2000/svg">
+              <svg class="svg-icon svg-icon_twitter" width="14" height="13" viewBox="0 0 14 13" xmlns="http://www.w3.org/2000/svg">
                 <use href="#icon_twitter" />
               </svg>
             </a>
           </li>
           <li>
             <a href="#" class="footer__social-link d-block">
-              <svg class="svg-icon svg-icon_instagram" width="14" height="13" viewBox="0 0 14 13"
-                xmlns="http://www.w3.org/2000/svg">
+              <svg class="svg-icon svg-icon_instagram" width="14" height="13" viewBox="0 0 14 13" xmlns="http://www.w3.org/2000/svg">
                 <use href="#icon_instagram" />
               </svg>
             </a>
           </li>
           <li>
             <a href="#" class="footer__social-link d-block">
-              <svg class="svg-icon svg-icon_youtube" width="16" height="11" viewBox="0 0 16 11"
-                xmlns="http://www.w3.org/2000/svg">
+              <svg class="svg-icon svg-icon_youtube" width="16" height="11" viewBox="0 0 16 11" xmlns="http://www.w3.org/2000/svg">
                 <path
                   d="M15.0117 1.8584C14.8477 1.20215 14.3281 0.682617 13.6992 0.518555C12.5234 0.19043 7.875 0.19043 7.875 0.19043C7.875 0.19043 3.19922 0.19043 2.02344 0.518555C1.39453 0.682617 0.875 1.20215 0.710938 1.8584C0.382812 3.00684 0.382812 5.46777 0.382812 5.46777C0.382812 5.46777 0.382812 7.90137 0.710938 9.07715C0.875 9.7334 1.39453 10.2256 2.02344 10.3896C3.19922 10.6904 7.875 10.6904 7.875 10.6904C7.875 10.6904 12.5234 10.6904 13.6992 10.3896C14.3281 10.2256 14.8477 9.7334 15.0117 9.07715C15.3398 7.90137 15.3398 5.46777 15.3398 5.46777C15.3398 5.46777 15.3398 3.00684 15.0117 1.8584ZM6.34375 7.68262V3.25293L10.2266 5.46777L6.34375 7.68262Z" />
               </svg>
@@ -349,8 +342,7 @@
           </li>
           <li>
             <a href="#" class="footer__social-link d-block">
-              <svg class="svg-icon svg-icon_pinterest" width="14" height="15" viewBox="0 0 14 15"
-                xmlns="http://www.w3.org/2000/svg">
+              <svg class="svg-icon svg-icon_pinterest" width="14" height="15" viewBox="0 0 14 15" xmlns="http://www.w3.org/2000/svg">
                 <use href="#icon_pinterest" />
               </svg>
             </a>
@@ -372,7 +364,13 @@
             <li><a href="{{ route('address') }}" class="menu-link menu-link_us-s">Addresses</a></li>
             <li><a href="{{ route('change') }}" class="menu-link menu-link_us-s">Account Details</a></li>
             <li><a href="{{ route('awish') }}" class="menu-link menu-link_us-s">Wishlist</a></li>
-            <li><a href="login.html" class="menu-link menu-link_us-s">Logout</a></li>
+            <li>
+              <form action="{{ route('logout') }}" method="POST" style="display: inline;">
+                @csrf
+                <button type="submit" class="menu-link menu-link_us-s"
+                  style="background: none; border: none; color: inherit; cursor: pointer; padding: 0;">LOGOUT</button>
+              </form>
+            </li>
           </ul>
         </div>
         <div class="col-lg-9">
@@ -389,7 +387,7 @@
   </main>
 
   <hr class="mt-5 text-secondary" />
-  
+
   <div id="scrollTop" class="visually-hidden end-0"></div>
   <div class="page-overlay"></div>
 @endsection

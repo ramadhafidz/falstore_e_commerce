@@ -64,7 +64,10 @@
 
 
   </main>
+
   <hr class="mt-5 text-secondary" />
   <div id="scrollTop" class="visually-hidden end-0"></div>
   <div class="page-overlay"></div>
+
+  @include('components.footer')
 @endsection

@@ -18,10 +18,16 @@ Route::get('/login', function () {
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::view('/admin/dashboard', 'admin.index')->name('admin.dashboard');
-    Route::get('/admin/brands',[AdminController::class,'brands'])->name('admin.brands');
-    Route::get('/admin/brand/add',[AdminController::class,'add_brand'])->name('admin.brand.add');
-    Route::post('/admin/brand/store',[AdminController::class,'add_brand_store'])->name('admin.brand.store');
+    Route::get('/admin/brand', [AdminController::class, 'brands'])->name('admin.brands');
+    Route::get('/admin/brand/add', [AdminController::class, 'add_brand'])->name('admin.brand.add');
+    Route::post('/admin/brand/store', [AdminController::class, 'add_brand_store'])->name('admin.brand.store');
+    Route::get('/admin/brand/edit/{id}', [AdminController::class, 'edit_brand'])->name('admin.brand.edit');
+    Route::put('/admin/brand/update', [AdminController::class, 'update_brand'])->name('admin.brand.update');
     Route::view('/admin/brand/product', 'admin.products')->name('admin.brand.products');
+    Route::get('/admin/categories', [AdminController::class, 'categories'])->name('admin.categories');
+    Route::get('/admin/category/add', [AdminController::class, 'add_category'])->name('admin.category.add');
+    Route::post('/admin/category/store', [AdminController::class, 'add_category_store'])->name('admin.category.store');
+    Route::delete('/admin/brand/{id}/delete', [AdminController::class, 'delete_brand'])->name('admin.brand.delete');
 });
 
 // Route::middleware(['auth', 'role:user'])->group(function () {
@@ -45,6 +51,9 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::view('/contact', 'contact')->name('contact');
     Route::view('/cart', 'cart.index')->name('cart');
     Route::view('/wishlist', 'wishlist')->name('wishlist');
+
+    Route::view('/cart/checkout', 'cart.checkput')->name('cart.checkput');
+    Route::view('/cart/checkout/complete', 'cart.confirm')->name('cart.complete');
 });
 
 require __DIR__ . '/auth.php';
