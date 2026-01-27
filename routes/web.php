@@ -18,9 +18,15 @@ Route::get('/login', function () {
 
 Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::view('/admin/dashboard', 'admin.index')->name('admin.dashboard');
-    Route::get('/admin/brands',[AdminController::class,'brands'])->name('admin.brands');
-    Route::get('/admin/brand/add',[AdminController::class,'add_brand'])->name('admin.brand.add');
-    Route::post('/admin/brand/store',[AdminController::class,'add_brand_store'])->name('admin.brand.store');
+
+    // Brands CRUD
+    Route::get('/admin/brands', [AdminController::class, 'brands'])->name('admin.brands');
+    Route::get('/admin/brand/add', [AdminController::class, 'add_brand'])->name('admin.brand.add');
+    Route::post('/admin/brand/store', [AdminController::class, 'brand_store'])->name('admin.brand.store');
+    Route::get('/admin/brand/edit/{id}', [AdminController::class, 'brand_edit'])->name('admin.brand.edit');
+    Route::put('/admin/brand/update/{id}', [AdminController::class, 'brand_update'])->name('admin.brand.update');
+    Route::delete('/admin/brand/delete/{id}', [AdminController::class, 'brand_delete'])->name('admin.brand.delete');
+
     Route::view('/admin/brand/product', 'admin.products')->name('admin.brand.products');
 });
 
@@ -44,6 +50,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::view('/about', 'about')->name('about');
     Route::view('/contact', 'contact')->name('contact');
     Route::view('/cart', 'cart.index')->name('cart');
+    Route::view('/cart/checkout', 'cart.checkput')->name('cart.checkout');
+    Route::view('/cart/checkout/complete', 'cart.confirm')->name('cart.complete');
     Route::view('/wishlist', 'wishlist')->name('wishlist');
 });
 

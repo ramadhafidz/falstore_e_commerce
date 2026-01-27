@@ -1,5 +1,5 @@
 @extends('layouts.admin')
-@section('title', 'Add Brand - Falstore Admin')
+@section('title', 'Edit Brand - Falstore Admin')
 @section('content')
 
 <div id="wrapper">
@@ -17,7 +17,7 @@
             <div class="main-content-wrap">
               <!-- Page Header -->
               <div class="flex items-center flex-wrap justify-between gap20 mb-27">
-                <h3>Add New Brand</h3>
+                <h3>Edit Brand</h3>
                 <ul class="breadcrumbs flex items-center flex-wrap justify-start gap10">
                   <li>
                     <a href="{{ route('admin.dashboard') }}">
@@ -36,22 +36,23 @@
                     <i class="icon-chevron-right"></i>
                   </li>
                   <li>
-                    <div class="text-tiny">Add New</div>
+                    <div class="text-tiny">Edit: {{ $brand->name }}</div>
                   </li>
                 </ul>
               </div>
 
               <!-- Form Box -->
               <div class="wg-box">
-                <form class="form-new-product form-style-1" action="{{ route('admin.brand.store') }}" method="POST"
+                <form class="form-new-product form-style-1" action="{{ route('admin.brand.update', $brand->id) }}" method="POST"
                   enctype="multipart/form-data">
                   @csrf
+                  @method('PUT')
 
                   <!-- Brand Name -->
                   <fieldset class="name">
                     <div class="body-title">Brand Name <span class="tf-color-1">*</span></div>
                     <input class="flex-grow @error('name') is-invalid @enderror" type="text"
-                      placeholder="Enter brand name" name="name" tabindex="0" value="{{ old('name') }}"
+                      placeholder="Enter brand name" name="name" tabindex="0" value="{{ old('name', $brand->name) }}"
                       aria-required="true" required id="brandName">
                     @error('name')
                       <div class="invalid-feedback">{{ $message }}</div>
@@ -62,9 +63,9 @@
                   <fieldset class="name">
                     <div class="body-title">Brand Slug <span class="tf-color-1">*</span></div>
                     <input class="flex-grow @error('slug') is-invalid @enderror" type="text"
-                      placeholder="brand-slug" name="slug" tabindex="0" value="{{ old('slug') }}"
+                      placeholder="brand-slug" name="slug" tabindex="0" value="{{ old('slug', $brand->slug) }}"
                       aria-required="true" required id="brandSlug">
-                    <small class="text-muted">URL-friendly version of the name. Auto-generated from name.</small>
+                    <small class="text-muted">URL-friendly version of the name.</small>
                     @error('slug')
                       <div class="invalid-feedback">{{ $message }}</div>
                     @enderror
@@ -74,15 +75,27 @@
                   <fieldset>
                     <div class="body-title">Brand Image</div>
                     <div class="upload-image flex-grow">
-                      <div class="item" id="imgpreview" style="display:none">
-                        <img src="" alt="Brand Preview" id="imgpreview_img" style="max-width: 124px; max-height: 124px; border-radius: 8px;">
+                      <!-- Current Image -->
+                      <div class="item" id="currentImage" @if(!$brand->image) style="display:none" @endif>
+                        @if($brand->image)
+                          <img src="{{ asset('storage/upload/images/brands/' . $brand->image) }}" alt="{{ $brand->name }}"
+                            style="max-width: 124px; max-height: 124px; border-radius: 8px;">
+                          <span class="current-label">Current</span>
+                        @endif
                       </div>
+
+                      <!-- New Image Preview -->
+                      <div class="item" id="imgpreview" style="display:none">
+                        <img src="" alt="New Brand Preview" id="imgpreview_img" style="max-width: 124px; max-height: 124px; border-radius: 8px;">
+                        <span class="new-label">New</span>
+                      </div>
+
                       <div id="upload-file" class="item up-load">
                         <label class="uploadfile" for="myFile">
                           <span class="icon">
                             <i class="icon-upload-cloud"></i>
                           </span>
-                          <span class="body-text">Drop your image here or <span class="tf-color">click to browse</span></span>
+                          <span class="body-text">{{ $brand->image ? 'Change image' : 'Upload image' }} <span class="tf-color">click to browse</span></span>
                           <span class="text-tiny">PNG, JPG, JPEG or WEBP. Max 2MB.</span>
                           <input type="file" id="myFile" name="image" accept="image/*">
                         </label>
@@ -96,7 +109,7 @@
                   <!-- Action Buttons -->
                   <div class="bot">
                     <a href="{{ route('admin.brands') }}" class="tf-button style-2 w208">Cancel</a>
-                    <button class="tf-button w208" type="submit">Save Brand</button>
+                    <button class="tf-button w208" type="submit">Update Brand</button>
                   </div>
                 </form>
               </div>
@@ -124,11 +137,10 @@
       if (file) {
         $("#imgpreview_img").attr('src', URL.createObjectURL(file));
         $("#imgpreview").show();
-        $("#upload-file").hide();
       }
     });
 
-    // Auto-generate slug from name
+    // Auto-generate slug from name (optional for edit)
     $("#brandName").on("keyup", function() {
       var name = $(this).val();
       var slug = name.toLowerCase()
@@ -137,13 +149,6 @@
         .replace(/-+/g, '-')
         .trim();
       $("#brandSlug").val(slug);
-    });
-
-    // Reset image preview
-    $("#imgpreview").on("click", function() {
-      $(this).hide();
-      $("#upload-file").show();
-      $("#myFile").val('');
     });
   });
 </script>
@@ -159,22 +164,21 @@
     font-size: 12px;
     margin-top: 5px;
   }
-  #imgpreview {
-    cursor: pointer;
-    position: relative;
-  }
-  #imgpreview:hover::after {
-    content: 'Click to remove';
-    position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    background: rgba(0,0,0,0.7);
-    color: white;
-    padding: 5px;
-    font-size: 10px;
+  .current-label, .new-label {
+    display: block;
     text-align: center;
-    border-radius: 0 0 8px 8px;
+    font-size: 10px;
+    margin-top: 5px;
+    padding: 2px 8px;
+    border-radius: 4px;
+  }
+  .current-label {
+    background: #6c757d;
+    color: white;
+  }
+  .new-label {
+    background: #28a745;
+    color: white;
   }
   .tf-button.style-2 {
     background: #6c757d;
