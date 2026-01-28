@@ -1,417 +1,191 @@
 @extends('layouts.admin')
-@section('title', 'Falstore')
+@section('title', 'Products - Falstore Admin')
 @section('content')
 
-<body class="body">
-    <div id="wrapper">
-        <div id="page" class="">
-            <div class="layout-wrap">
+<div id="wrapper">
+  <div id="page" class="">
+    <div class="layout-wrap">
 
-                <!-- <div id="preload" class="preload-container">
-    <div class="preloading">
-        <span></span>
-    </div>
-</div> -->
+      @include('components.admin.sidemenu')
 
-@include('components.admin.sidemenu')
+      <div class="section-content-right">
+        @include('components.admin.header')
 
-                <div class="section-content-right">
+        <div class="main-content">
+          <div class="main-content-inner">
+            <div class="main-content-wrap">
+              <div class="flex items-center flex-wrap justify-between gap20 mb-27">
+                <h3>Products</h3>
+                <ul class="breadcrumbs flex items-center flex-wrap justify-start gap10">
+                  <li>
+                    <a href="{{ route('admin.dashboard') }}">
+                      <div class="text-tiny">Dashboard</div>
+                    </a>
+                  </li>
+                  <li>
+                    <i class="icon-chevron-right"></i>
+                  </li>
+                  <li>
+                    <div class="text-tiny">Products</div>
+                  </li>
+                </ul>
+              </div>
 
-                    <div class="header-dashboard">
-                        <div class="wrap">
-                            <div class="header-left">
-                                <a href="index-2.html">
-                                    <img class="" id="logo_header_mobile" alt="" src="{{asset('images/admin/logo/logo.png')}}"
-                                        data-light="images/logo/logo.png" data-dark="images/logo/logo.png"
-                                        data-width="154px" data-height="52px" data-retina="images/logo/logo.png">
-                                </a>
-                                <div class="button-show-hide">
-                                    <i class="icon-menu-left"></i>
-                                </div>
-
-
-                                <form class="form-search flex-grow">
-                                    <fieldset class="name">
-                                        <input type="text" placeholder="Search here..." class="show-search" name="name"
-                                            tabindex="2" value="" aria-required="true" required="">
-                                    </fieldset>
-                                    <div class="button-submit">
-                                        <button class="" type="submit"><i class="icon-search"></i></button>
-                                    </div>
-                                    <div class="box-content-search" id="box-content-search">
-                                        <ul class="mb-24">
-                                            <li class="mb-14">
-                                                <div class="body-title">Top selling product</div>
-                                            </li>
-                                            <li class="mb-14">
-                                                <div class="divider"></div>
-                                            </li>
-                                            <li>
-                                                <ul>
-                                                    <li class="product-item gap14 mb-10">
-                                                        <div class="image no-bg">
-                                                            <img src="{{asset('images/admin/products/17.png')}}" alt="">
-                                                        </div>
-                                                        <div class="flex items-center justify-between gap20 flex-grow">
-                                                            <div class="name">
-                                                                <a href="product-list.html" class="body-text">Dog Food
-                                                                    Rachael Ray Nutrish®</a>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="mb-10">
-                                                        <div class="divider"></div>
-                                                    </li>
-                                                    <li class="product-item gap14 mb-10">
-                                                        <div class="image no-bg">
-                                                            <img src="{{asset('images/admin/products/18.png')}}" alt="">
-                                                        </div>
-                                                        <div class="flex items-center justify-between gap20 flex-grow">
-                                                            <div class="name">
-                                                                <a href="product-list.html" class="body-text">Natural
-                                                                    Dog Food Healthy Dog Food</a>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="mb-10">
-                                                        <div class="divider"></div>
-                                                    </li>
-                                                    <li class="product-item gap14">
-                                                        <div class="image no-bg">
-                                                            <img src="{{asset('images/admin/products/19.png')}}" alt="">
-                                                        </div>
-                                                        <div class="flex items-center justify-between gap20 flex-grow">
-                                                            <div class="name">
-                                                                <a href="product-list.html" class="body-text">Freshpet
-                                                                    Healthy Dog Food and Cat</a>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                        <ul class="">
-                                            <li class="mb-14">
-                                                <div class="body-title">Order product</div>
-                                            </li>
-                                            <li class="mb-14">
-                                                <div class="divider"></div>
-                                            </li>
-                                            <li>
-                                                <ul>
-                                                    <li class="product-item gap14 mb-10">
-                                                        <div class="image no-bg">
-                                                            <img src="{{asset('images/admin/products/20.png')}}" alt="">
-                                                        </div>
-                                                        <div class="flex items-center justify-between gap20 flex-grow">
-                                                            <div class="name">
-                                                                <a href="product-list.html" class="body-text">Sojos
-                                                                    Crunchy Natural Grain Free...</a>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="mb-10">
-                                                        <div class="divider"></div>
-                                                    </li>
-                                                    <li class="product-item gap14 mb-10">
-                                                        <div class="image no-bg">
-                                                            <img src="{{asset('images/admin/products/21.png')}}" alt="">
-                                                        </div>
-                                                        <div class="flex items-center justify-between gap20 flex-grow">
-                                                            <div class="name">
-                                                                <a href="product-list.html" class="body-text">Kristin
-                                                                    Watson</a>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="mb-10">
-                                                        <div class="divider"></div>
-                                                    </li>
-                                                    <li class="product-item gap14 mb-10">
-                                                        <div class="image no-bg">
-                                                            <img src="{{asset('images/admin/products/22.png')}}" alt="">
-                                                        </div>
-                                                        <div class="flex items-center justify-between gap20 flex-grow">
-                                                            <div class="name">
-                                                                <a href="product-list.html" class="body-text">Mega
-                                                                    Pumpkin Bone</a>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                    <li class="mb-10">
-                                                        <div class="divider"></div>
-                                                    </li>
-                                                    <li class="product-item gap14">
-                                                        <div class="image no-bg">
-                                                            <img src="{{asset('images/admin/products/23.png')}}" alt="">
-                                                        </div>
-                                                        <div class="flex items-center justify-between gap20 flex-grow">
-                                                            <div class="name">
-                                                                <a href="product-list.html" class="body-text">Mega
-                                                                    Pumpkin Bone</a>
-                                                            </div>
-                                                        </div>
-                                                    </li>
-                                                </ul>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </form>
-
-                            </div>
-                            <div class="header-grid">
-
-                                <div class="popup-wrap message type-header">
-                                    <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button"
-                                            id="dropdownMenuButton2" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <span class="header-item">
-                                                <span class="text-tiny">1</span>
-                                                <i class="icon-bell"></i>
-                                            </span>
-                                        </button>
-                                        <ul class="dropdown-menu dropdown-menu-end has-content"
-                                            aria-labelledby="dropdownMenuButton2">
-                                            <li>
-                                                <h6>Notifications</h6>
-                                            </li>
-                                            <li>
-                                                <div class="message-item item-1">
-                                                    <div class="image">
-                                                        <i class="icon-noti-1"></i>
-                                                    </div>
-                                                    <div>
-                                                        <div class="body-title-2">Discount available</div>
-                                                        <div class="text-tiny">Morbi sapien massa, ultricies at rhoncus
-                                                            at, ullamcorper nec diam</div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="message-item item-2">
-                                                    <div class="image">
-                                                        <i class="icon-noti-2"></i>
-                                                    </div>
-                                                    <div>
-                                                        <div class="body-title-2">Account has been verified</div>
-                                                        <div class="text-tiny">Mauris libero ex, iaculis vitae rhoncus
-                                                            et</div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="message-item item-3">
-                                                    <div class="image">
-                                                        <i class="icon-noti-3"></i>
-                                                    </div>
-                                                    <div>
-                                                        <div class="body-title-2">Order shipped successfully</div>
-                                                        <div class="text-tiny">Integer aliquam eros nec sollicitudin
-                                                            sollicitudin</div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li>
-                                                <div class="message-item item-4">
-                                                    <div class="image">
-                                                        <i class="icon-noti-4"></i>
-                                                    </div>
-                                                    <div>
-                                                        <div class="body-title-2">Order pending: <span>ID 305830</span>
-                                                        </div>
-                                                        <div class="text-tiny">Ultricies at rhoncus at ullamcorper</div>
-                                                    </div>
-                                                </div>
-                                            </li>
-                                            <li><a href="#" class="tf-button w-full">View all</a></li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-
-
-
-                                <div class="popup-wrap user type-header">
-                                    <div class="dropdown">
-                                        <button class="btn btn-secondary dropdown-toggle" type="button"
-                                            id="dropdownMenuButton3" data-bs-toggle="dropdown" aria-expanded="false">
-                                            <span class="header-user wg-user">
-                                                <span class="image">
-                                                    <img src="{{asset('images/admin/avatar/user-1.png')}}" alt="">
-                                                </span>
-                                                <span class="flex flex-column">
-                                                    <span class="body-title mb-2">Kristin Watson</span>
-                                                    <span class="text-tiny">Admin</span>
-                                                </span>
-                                            </span>
-                                        </button>
-                                        <ul class="dropdown-menu dropdown-menu-end has-content"
-                                            aria-labelledby="dropdownMenuButton3">
-                                            <li>
-                                                <a href="#" class="user-item">
-                                                    <div class="icon">
-                                                        <i class="icon-user"></i>
-                                                    </div>
-                                                    <div class="body-title-2">Account</div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="user-item">
-                                                    <div class="icon">
-                                                        <i class="icon-mail"></i>
-                                                    </div>
-                                                    <div class="body-title-2">Inbox</div>
-                                                    <div class="number">27</div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="user-item">
-                                                    <div class="icon">
-                                                        <i class="icon-file-text"></i>
-                                                    </div>
-                                                    <div class="body-title-2">Taskboard</div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="#" class="user-item">
-                                                    <div class="icon">
-                                                        <i class="icon-headphones"></i>
-                                                    </div>
-                                                    <div class="body-title-2">Support</div>
-                                                </a>
-                                            </li>
-                                            <li>
-                                                <a href="login.html" class="user-item">
-                                                    <div class="icon">
-                                                        <i class="icon-log-out"></i>
-                                                    </div>
-                                                    <div class="body-title-2">Log out</div>
-                                                </a>
-                                            </li>
-                                        </ul>
-                                    </div>
-                                </div>
-
-                            </div>
-                        </div>
-                    </div>
-                    <div class="main-content">
-
-                        <div class="main-content-inner">
-                            <div class="main-content-wrap">
-                                <div class="flex items-center flex-wrap justify-between gap20 mb-27">
-                                    <h3>All Products</h3>
-                                    <ul class="breadcrumbs flex items-center flex-wrap justify-start gap10">
-                                        <li>
-                                            <a href="index.html">
-                                                <div class="text-tiny">Dashboard</div>
-                                            </a>
-                                        </li>
-                                        <li>
-                                            <i class="icon-chevron-right"></i>
-                                        </li>
-                                        <li>
-                                            <div class="text-tiny">All Products</div>
-                                        </li>
-                                    </ul>
-                                </div>
-
-                                <div class="wg-box">
-                                    <div class="flex items-center justify-between gap10 flex-wrap">
-                                        <div class="wg-filter flex-grow">
-                                            <form class="form-search">
-                                                <fieldset class="name">
-                                                    <input type="text" placeholder="Search here..." class="" name="name"
-                                                        tabindex="2" value="" aria-required="true" required="">
-                                                </fieldset>
-                                                <div class="button-submit">
-                                                    <button class="" type="submit"><i class="icon-search"></i></button>
-                                                </div>
-                                            </form>
-                                        </div>
-                                        <a class="tf-button style-1 w208" href="add-product.html"><i
-                                                class="icon-plus"></i>Add new</a>
-                                    </div>
-                                    <div class="table-responsive">
-                                        <table class="table table-striped table-bordered">
-                                            <thead>
-                                                <tr>
-                                                    <th>#</th>
-                                                    <th>Name</th>
-                                                    <th>Price</th>
-                                                    <th>SalePrice</th>
-                                                    <th>SKU</th>
-                                                    <th>Category</th>
-                                                    <th>Brand</th>
-                                                    <th>Featured</th>
-                                                    <th>Stock</th>
-                                                    <th>Quantity</th>
-                                                    <th>Action</th>
-                                                </tr>
-                                            </thead>
-                                            <tbody>
-                                                <tr>
-                                                    <td>6</td>
-                                                    <td class="pname">
-                                                        <div class="image">
-                                                            <img src="1718623519.html" alt="" class="image">
-                                                        </div>
-                                                        <div class="name">
-                                                            <a href="#" class="body-title-2">Product6</a>
-                                                            <div class="text-tiny mt-3">product6</div>
-                                                        </div>
-                                                    </td>
-                                                    <td>$128.00</td>
-                                                    <td>$110.00</td>
-                                                    <td>SKU7868</td>
-                                                    <td>Category3</td>
-                                                    <td>Brand2</td>
-                                                    <td>Yes</td>
-                                                    <td>instock</td>
-                                                    <td>11</td>
-                                                    <td>
-                                                        <div class="list-icon-function">
-                                                            <a href="#" target="_blank">
-                                                                <div class="item eye">
-                                                                    <i class="icon-eye"></i>
-                                                                </div>
-                                                            </a>
-                                                            <a href="#">
-                                                                <div class="item edit">
-                                                                    <i class="icon-edit-3"></i>
-                                                                </div>
-                                                            </a>
-                                                            <form action="#" method="POST">
-                                                                <div class="item text-danger delete">
-                                                                    <i class="icon-trash-2"></i>
-                                                                </div>
-                                                            </form>
-                                                        </div>
-                                                    </td>
-                                                </tr>
-                                            </tbody>
-                                        </table>
-                                    </div>
-
-                                    <div class="divider"></div>
-                                    <div class="flex items-center justify-between flex-wrap gap10 wgp-pagination">
-
-
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
-
-                        <div class="bottom-page">
-                            <div class="body-text">Copyright © 2024 SurfsideMedia</div>
-                        </div>
-                    </div>
-
+              <div class="wg-box">
+                <div class="flex items-center justify-between gap10 flex-wrap">
+                  <div class="wg-filter flex-grow">
+                    <form class="form-search" method="GET" action="{{ route('admin.products') }}">
+                      <fieldset class="name">
+                        <input type="text" placeholder="Search products..." class="" name="search" tabindex="2"
+                          value="{{ request('search') }}">
+                      </fieldset>
+                      <div class="button-submit">
+                        <button class="" type="submit"><i class="icon-search"></i></button>
+                      </div>
+                    </form>
+                  </div>
+                  <a class="tf-button style-1 w208" href="{{ route('admin.product.add') }}">
+                    <i class="icon-plus"></i>Add New Product
+                  </a>
                 </div>
-            </div>
-        </div>
-    </div>
 
-</body>
+                @if (Session::has('status'))
+                  <div class="alert alert-success alert-dismissible fade show mt-3" role="alert">
+                    <i class="icon-check-circle me-2"></i>{{ Session::get('status') }}
+                    <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                  </div>
+                @endif
+
+                <div class="wg-table table-all-user">
+                  <div class="table-responsive">
+                    <table class="table table-striped table-bordered">
+                      <thead>
+                        <tr>
+                          <th style="width: 50px;">#</th>
+                          <th>Product</th>
+                          <th>Price</th>
+                          <th>Sale Price</th>
+                          <th>SKU</th>
+                          <th>Category</th>
+                          <th>Brand</th>
+                          <th style="width: 80px;">Stock</th>
+                          <th style="width: 70px;">Qty</th>
+                          <th style="width: 120px;">Action</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        @forelse ($products as $product)
+                          <tr>
+                            <td>{{ $product->id }}</td>
+                            <td class="pname">
+                              <div class="image">
+                                @if($product->image)
+                                  <img src="{{ asset('storage/upload/images/products/' . $product->image) }}" alt="{{ $product->name }}" class="image">
+                                @else
+                                  <div class="image-placeholder" style="width: 50px; height: 50px; background: #f0f0f0; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+                                    <i class="icon-shopping-bag" style="color: #ccc;"></i>
+                                  </div>
+                                @endif
+                              </div>
+                              <div class="name">
+                                <a href="{{ route('admin.product.edit', $product->id) }}" class="body-title-2">{{ $product->name }}</a>
+                                <div class="text-tiny mt-3">{{ $product->slug }}</div>
+                              </div>
+                            </td>
+                            <td>${{ number_format($product->regular_price, 2) }}</td>
+                            <td>
+                              @if($product->sale_price)
+                                <span class="text-success">${{ number_format($product->sale_price, 2) }}</span>
+                              @else
+                                <span class="text-muted">-</span>
+                              @endif
+                            </td>
+                            <td><code>{{ $product->SKU }}</code></td>
+                            <td>{{ $product->category->name ?? '-' }}</td>
+                            <td>{{ $product->brand->name ?? '-' }}</td>
+                            <td>
+                              @if($product->stock_status == 'instock')
+                                <span class="badge bg-success">In Stock</span>
+                              @else
+                                <span class="badge bg-danger">Out of Stock</span>
+                              @endif
+                            </td>
+                            <td>{{ $product->quantity }}</td>
+                            <td>
+                              <div class="list-icon-function">
+                                <a href="{{ route('admin.product.edit', $product->id) }}" title="Edit">
+                                  <div class="item edit">
+                                    <i class="icon-edit-3"></i>
+                                  </div>
+                                </a>
+                                <form action="{{ route('admin.product.delete', $product->id) }}" method="POST" class="delete-form" style="display: inline;">
+                                  @csrf
+                                  @method('DELETE')
+                                  <button type="submit" class="item text-danger delete" title="Delete" style="border: none; background: none; cursor: pointer;">
+                                    <i class="icon-trash-2"></i>
+                                  </button>
+                                </form>
+                              </div>
+                            </td>
+                          </tr>
+                        @empty
+                          <tr>
+                            <td colspan="10" class="text-center py-4">
+                              <div class="empty-state">
+                                <i class="icon-shopping-bag" style="font-size: 48px; color: #ccc;"></i>
+                                <p class="mt-3 text-muted">No products found</p>
+                                <a href="{{ route('admin.product.add') }}" class="tf-button style-1 mt-3">
+                                  <i class="icon-plus"></i> Add First Product
+                                </a>
+                              </div>
+                            </td>
+                          </tr>
+                        @endforelse
+                      </tbody>
+                    </table>
+                  </div>
+
+                  @if($products->hasPages())
+                    <div class="divider"></div>
+                    <div class="flex items-center justify-between flex-wrap gap10 wgp-pagination">
+                      {{ $products->links('pagination::bootstrap-5') }}
+                    </div>
+                  @endif
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="bottom-page">
+            <div class="body-text">Copyright © {{ date('Y') }} Falstore. All rights reserved.</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+@endsection
+
+@push('scripts')
+<script>
+  $(document).ready(function() {
+    $('.delete-form').on('submit', function(e) {
+      e.preventDefault();
+      var form = this;
+      swal({
+        title: "Are you sure?",
+        text: "This product will be permanently deleted!",
+        icon: "warning",
+        buttons: ["Cancel", "Yes, delete it!"],
+        dangerMode: true,
+      }).then((willDelete) => {
+        if (willDelete) {
+          form.submit();
+        }
+      });
+    });
+  });
+</script>
+@endpush
 

@@ -11,12 +11,19 @@ class Product extends Model
 
     protected $fillable = [
         'name',
+        'slug',
+        'short_description',
         'description',
-        'price',
-        'stock',
+        'regular_price',
+        'sale_price',
+        'SKU',
+        'stock_status',
+        'featured',
+        'quantity',
+        'image',
+        'images',
         'category_id',
         'brand_id',
-        'image',
     ];
 
     public function category()
@@ -27,5 +34,10 @@ class Product extends Model
     public function brand()
     {
         return $this->belongsTo(Brand::class);
+    }
+
+    public function reviews()
+    {
+        return $this->hasMany(Review::class);
     }
 }
