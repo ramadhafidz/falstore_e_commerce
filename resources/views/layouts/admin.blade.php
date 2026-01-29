@@ -2,10 +2,11 @@
 <html lang="en">
 
 <head>
-  <title>@yield('title')</title>
+  <title>@yield('title', 'Falstore Admin')</title>
   <meta charset="utf-8">
-  <meta name="author" content="themesflat.com">
+  <meta name="author" content="Falstore">
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta name="csrf-token" content="{{ csrf_token() }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('css/admin/animate.min.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('css/admin/animation.css') }}">
   <link rel="stylesheet" type="text/css" href="{{ asset('css/admin/bootstrap.css') }}">
@@ -14,8 +15,8 @@
   <link rel="stylesheet" href="{{ asset('icon/style.css') }}">
   <link rel="shortcut icon" href="{{ asset('images/favicon.ico') }}">
   <link rel="apple-touch-icon-precomposed" href="{{ asset('images/favicon.ico') }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/admin/sweetalert.min.css') }}">
-  <link rel="stylesheet" type="text/css" href="{{ asset('css/admin/custom.css') }}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/admin/sweetalert.min.css')}}">
+  <link rel="stylesheet" type="text/css" href="{{ asset('css/admin/custom.css')}}">
   @stack('styles')
 </head>
 

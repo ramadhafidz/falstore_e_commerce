@@ -20,25 +20,35 @@ Route::get('/login', function () {
 Route::middleware(['auth', 'role:admin'])->group(function () {
     Route::view('/admin/dashboard', 'admin.index')->name('admin.dashboard');
 
-    // Brand
-    Route::get('/admin/brand', [AdminController::class, 'brands'])->name('admin.brands');
+    // Brands CRUD
+    Route::get('/admin/brands', [AdminController::class, 'brands'])->name('admin.brands');
     Route::get('/admin/brand/add', [AdminController::class, 'add_brand'])->name('admin.brand.add');
-    Route::post('/admin/brand/store', [AdminController::class, 'add_brand_store'])->name('admin.brand.store');
-    Route::get('/admin/brand/{id}/edit', [AdminController::class, 'edit_brand'])->name('admin.brand.edit');
-    Route::put('/admin/brand/update', [AdminController::class, 'update_brand'])->name('admin.brand.update');
-    Route::view('/admin/brand/product', 'admin.products')->name('admin.brand.products');
-    Route::delete('/admin/brand/{id}/delete', [AdminController::class, 'delete_brand'])->name('admin.brand.delete');
+    Route::post('/admin/brand/store', [AdminController::class, 'brand_store'])->name('admin.brand.store');
+    Route::get('/admin/brand/edit/{id}', [AdminController::class, 'brand_edit'])->name('admin.brand.edit');
+    Route::put('/admin/brand/update/{id}', [AdminController::class, 'brand_update'])->name('admin.brand.update');
+    Route::delete('/admin/brand/delete/{id}', [AdminController::class, 'brand_delete'])->name('admin.brand.delete');
 
-    // Kategori
+    // Categories CRUD
     Route::get('/admin/categories', [AdminController::class, 'categories'])->name('admin.categories');
     Route::get('/admin/category/add', [AdminController::class, 'add_category'])->name('admin.category.add');
-    Route::post('/admin/category/store', [AdminController::class, 'add_category_store'])->name('admin.category.store');
-    Route::get('/admin/category/{id}/edit', [AdminController::class, 'edit_category'])->name('admin.category.edit');
-    Route::put('/admin/category/update', [AdminController::class, 'update_category'])->name('admin.category.update');
-    Route::delete('/admin/category/{id}/delete',[AdminController::class,'delete_category'])->name('admin.category.delete');
+    Route::post('/admin/category/store', [AdminController::class, 'category_store'])->name('admin.category.store');
+    Route::get('/admin/category/edit/{id}', [AdminController::class, 'category_edit'])->name('admin.category.edit');
+    Route::put('/admin/category/update/{id}', [AdminController::class, 'category_update'])->name('admin.category.update');
+    Route::delete('/admin/category/delete/{id}', [AdminController::class, 'category_delete'])->name('admin.category.delete');
 
-    // Produk
-    Route::get('/admin/product/add',[AdminController::class,'add_product'])->name('admin.product.add');
+    // Products CRUD
+    Route::get('/admin/products', [AdminController::class, 'products'])->name('admin.products');
+    Route::get('/admin/product/add', [AdminController::class, 'add_product'])->name('admin.product.add');
+    Route::post('/admin/product/store', [AdminController::class, 'product_store'])->name('admin.product.store');
+    Route::get('/admin/product/edit/{id}', [AdminController::class, 'product_edit'])->name('admin.product.edit');
+    Route::put('/admin/product/update/{id}', [AdminController::class, 'product_update'])->name('admin.product.update');
+    Route::delete('/admin/product/delete/{id}', [AdminController::class, 'product_delete'])->name('admin.product.delete');
+
+    // Users
+    Route::get('/admin/users', [AdminController::class, 'users'])->name('admin.users');
+
+    // Settings
+    Route::get('/admin/settings', [AdminController::class, 'settings'])->name('admin.settings');
 });
 
 // Wajib auth/login buat masuk ke sini
@@ -57,6 +67,8 @@ Route::middleware('auth:sanctum')->group(function () {
     Route::view('/about', 'about')->name('about');
     Route::view('/contact', 'contact')->name('contact');
     Route::view('/cart', 'cart.index')->name('cart');
+    Route::view('/cart/checkout', 'cart.checkput')->name('cart.checkout');
+    Route::view('/cart/checkout/complete', 'cart.confirm')->name('cart.complete');
     Route::view('/wishlist', 'wishlist')->name('wishlist');
 
     // Cart

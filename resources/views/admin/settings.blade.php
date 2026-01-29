@@ -1,129 +1,101 @@
 @extends('layouts.admin')
-@section('title', 'Falstore')
+@section('title', 'Settings - Falstore Admin')
 @section('content')
 
-  <div id="wrapper">
-    <div id="page" class="">
-      <div class="layout-wrap">
+<div id="wrapper">
+  <div id="page" class="">
+    <div class="layout-wrap">
 
-        @include('components.admin.loading')
-        @include('components.admin.sidemenu')
+      @include('components.admin.sidemenu')
 
-        <div class="section-content-right">
+      <div class="section-content-right">
+        @include('components.admin.header')
 
-          @include('components.admin.header')
-
-          <div class="main-content">
-            @push('styles')
-              <style>
-                .text-danger {
-                  font-size: initial;
-                  line-height: 36px;
-                }
-
-                .alert {
-                  font-size: initial;
-                }
-              </style>
-            @endpush
-
-            <div class="main-content-inner">
-              <div class="main-content-wrap">
-                <div class="flex items-center flex-wrap justify-between gap20 mb-27">
-                  <h3>Settings</h3>
-                  <ul class="breadcrumbs flex items-center flex-wrap justify-start gap10">
-                    <li>
-                      <a href="#">
-                        <div class="text-tiny">Dashboard</div>
-                      </a>
-                    </li>
-                    <li>
-                      <i class="icon-chevron-right"></i>
-                    </li>
-                    <li>
-                      <div class="text-tiny">Settings</div>
-                    </li>
-                  </ul>
-                </div>
-
-                <div class="wg-box">
-                  <div class="col-lg-12">
-                    <div class="page-content my-account__edit">
-                      <div class="my-account__edit-form">
-                        <form name="account_edit_form" action="#" method="POST" class="form-new-product form-style-1 needs-validation"
-                          novalidate="">
-
-                          <fieldset class="name">
-                            <div class="body-title">Name <span class="tf-color-1">*</span>
-                            </div>
-                            <input class="flex-grow" type="text" placeholder="Full Name" name="name" tabindex="0" value=""
-                              aria-required="true" required="">
-                          </fieldset>
-
-                          <fieldset class="name">
-                            <div class="body-title">Mobile Number <span class="tf-color-1">*</span></div>
-                            <input class="flex-grow" type="text" placeholder="Mobile Number" name="mobile" tabindex="0" value=""
-                              aria-required="true" required="">
-                          </fieldset>
-
-                          <fieldset class="name">
-                            <div class="body-title">Email Address <span class="tf-color-1">*</span></div>
-                            <input class="flex-grow" type="text" placeholder="Email Address" name="email" tabindex="0" value=""
-                              aria-required="true" required="">
-                          </fieldset>
-
-                          <div class="row">
-                            <div class="col-md-12">
-                              <div class="my-3">
-                                <h5 class="text-uppercase mb-0">Password Change</h5>
-                              </div>
-                            </div>
-                            <div class="col-md-12">
-                              <fieldset class="name">
-                                <div class="body-title pb-3">Old password <span class="tf-color-1">*</span>
-                                </div>
-                                <input class="flex-grow" type="password" placeholder="Old password" id="old_password" name="old_password"
-                                  aria-required="true" required="">
-                              </fieldset>
-
-                            </div>
-                            <div class="col-md-12">
-                              <fieldset class="name">
-                                <div class="body-title pb-3">New password <span class="tf-color-1">*</span>
-                                </div>
-                                <input class="flex-grow" type="password" placeholder="New password" id="new_password" name="new_password"
-                                  aria-required="true" required="">
-                              </fieldset>
-
-                            </div>
-                            <div class="col-md-12">
-                              <fieldset class="name">
-                                <div class="body-title pb-3">Confirm new password <span class="tf-color-1">*</span></div>
-                                <input class="flex-grow" type="password" placeholder="Confirm new password" cfpwd="" data-cf-pwd="#new_password"
-                                  id="new_password_confirmation" name="new_password_confirmation" aria-required="true" required="">
-                                <div class="invalid-feedback">Passwords did not match!
-                                </div>
-                              </fieldset>
-                            </div>
-                            <div class="col-md-12">
-                              <div class="my-3">
-                                <button type="submit" class="btn btn-primary tf-button w208">Save
-                                  Changes</button>
-                              </div>
-                            </div>
-                          </div>
-                        </form>
-                      </div>
-                    </div>
-                  </div>
-                </div>
+        <div class="main-content">
+          <div class="main-content-inner">
+            <div class="main-content-wrap">
+              <div class="flex items-center flex-wrap justify-between gap20 mb-27">
+                <h3>Settings</h3>
+                <ul class="breadcrumbs flex items-center flex-wrap justify-start gap10">
+                  <li>
+                    <a href="{{ route('admin.dashboard') }}">
+                      <div class="text-tiny">Dashboard</div>
+                    </a>
+                  </li>
+                  <li>
+                    <i class="icon-chevron-right"></i>
+                  </li>
+                  <li>
+                    <div class="text-tiny">Settings</div>
+                  </li>
+                </ul>
               </div>
-            </div>
 
-            @include('components.admin.footer')
+              <div class="wg-box">
+                <h5 class="mb-4">General Settings</h5>
+                
+                <form class="form-style-1">
+                  <fieldset class="name">
+                    <div class="body-title">Site Name</div>
+                    <input class="flex-grow" type="text" placeholder="Enter site name" name="site_name" value="Falstore">
+                  </fieldset>
+
+                  <fieldset class="name">
+                    <div class="body-title">Site Email</div>
+                    <input class="flex-grow" type="email" placeholder="Enter site email" name="site_email" value="admin@falstore.com">
+                  </fieldset>
+
+                  <fieldset class="name">
+                    <div class="body-title">Site Phone</div>
+                    <input class="flex-grow" type="text" placeholder="Enter phone number" name="site_phone" value="+62 812 3456 7890">
+                  </fieldset>
+
+                  <fieldset class="name">
+                    <div class="body-title">Site Address</div>
+                    <textarea class="flex-grow" placeholder="Enter address" name="site_address" rows="3">Jakarta, Indonesia</textarea>
+                  </fieldset>
+
+                  <div class="bot">
+                    <button class="tf-button w208" type="submit">Save Settings</button>
+                  </div>
+                </form>
+              </div>
+
+              <div class="wg-box mt-4">
+                <h5 class="mb-4">Social Media</h5>
+                
+                <form class="form-style-1">
+                  <fieldset class="name">
+                    <div class="body-title">Facebook URL</div>
+                    <input class="flex-grow" type="url" placeholder="https://facebook.com/..." name="facebook_url">
+                  </fieldset>
+
+                  <fieldset class="name">
+                    <div class="body-title">Instagram URL</div>
+                    <input class="flex-grow" type="url" placeholder="https://instagram.com/..." name="instagram_url">
+                  </fieldset>
+
+                  <fieldset class="name">
+                    <div class="body-title">Twitter URL</div>
+                    <input class="flex-grow" type="url" placeholder="https://twitter.com/..." name="twitter_url">
+                  </fieldset>
+
+                  <div class="bot">
+                    <button class="tf-button w208" type="submit">Save Social Media</button>
+                  </div>
+                </form>
+              </div>
+
+            </div>
+          </div>
+
+          <div class="bottom-page">
+            <div class="body-text">Copyright © {{ date('Y') }} Falstore. All rights reserved.</div>
           </div>
         </div>
       </div>
     </div>
   </div>
+</div>
+
 @endsection

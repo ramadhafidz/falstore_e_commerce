@@ -1,378 +1,176 @@
 @extends('layouts.admin')
-@section('title', 'Falstore')
+@section('title', 'Dashboard - Falstore Admin')
 @section('content')
 
-  <div id="wrapper">
-    <div id="page" class="">
-      <div class="layout-wrap">
+<div id="wrapper">
+  <div id="page" class="">
+    <div class="layout-wrap">
 
-        @include('components.admin.loading')
-        @include('components.admin.sidemenu')
+      @include('components.admin.sidemenu')
 
-        <div class="section-content-right">
+      <div class="section-content-right">
+        @include('components.admin.header')
 
-          @include('components.admin.header')
+        <div class="main-content">
+          <div class="main-content-inner">
+            <div class="main-content-wrap">
+              <div class="flex items-center flex-wrap justify-between gap20 mb-27">
+                <h3>Dashboard</h3>
+                <ul class="breadcrumbs flex items-center flex-wrap justify-start gap10">
+                  <li>
+                    <a href="{{ route('admin.dashboard') }}">
+                      <div class="text-tiny">Dashboard</div>
+                    </a>
+                  </li>
+                </ul>
+              </div>
 
-          <div class="main-content">
-
-            <div class="main-content-inner">
-
-              <div class="main-content-wrap">
-                <div class="tf-section-2 mb-30">
-                  <div class="flex gap20 flex-wrap-mobile">
-                    <div class="w-half">
-
-                      <div class="wg-chart-default mb-20">
-                        <div class="flex items-center justify-between">
-                          <div class="flex items-center gap14">
-                            <div class="image ic-bg">
-                              <i class="icon-shopping-bag"></i>
-                            </div>
-                            <div>
-                              <div class="body-text mb-2">Total Orders</div>
-                              <h4>3</h4>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-
-                      <div class="wg-chart-default mb-20">
-                        <div class="flex items-center justify-between">
-                          <div class="flex items-center gap14">
-                            <div class="image ic-bg">
-                              <i class="icon-dollar-sign"></i>
-                            </div>
-                            <div>
-                              <div class="body-text mb-2">Total Amount</div>
-                              <h4>481.34</h4>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-
-                      <div class="wg-chart-default mb-20">
-                        <div class="flex items-center justify-between">
-                          <div class="flex items-center gap14">
-                            <div class="image ic-bg">
-                              <i class="icon-shopping-bag"></i>
-                            </div>
-                            <div>
-                              <div class="body-text mb-2">Pending Orders</div>
-                              <h4>3</h4>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-
-                      <div class="wg-chart-default">
-                        <div class="flex items-center justify-between">
-                          <div class="flex items-center gap14">
-                            <div class="image ic-bg">
-                              <i class="icon-dollar-sign"></i>
-                            </div>
-                            <div>
-                              <div class="body-text mb-2">Pending Orders Amount</div>
-                              <h4>481.34</h4>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                    </div>
-
-                    <div class="w-half">
-
-                      <div class="wg-chart-default mb-20">
-                        <div class="flex items-center justify-between">
-                          <div class="flex items-center gap14">
-                            <div class="image ic-bg">
-                              <i class="icon-shopping-bag"></i>
-                            </div>
-                            <div>
-                              <div class="body-text mb-2">Delivered Orders</div>
-                              <h4>0</h4>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-
-                      <div class="wg-chart-default mb-20">
-                        <div class="flex items-center justify-between">
-                          <div class="flex items-center gap14">
-                            <div class="image ic-bg">
-                              <i class="icon-dollar-sign"></i>
-                            </div>
-                            <div>
-                              <div class="body-text mb-2">Delivered Orders Amount</div>
-                              <h4>0.00</h4>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-
-                      <div class="wg-chart-default mb-20">
-                        <div class="flex items-center justify-between">
-                          <div class="flex items-center gap14">
-                            <div class="image ic-bg">
-                              <i class="icon-shopping-bag"></i>
-                            </div>
-                            <div>
-                              <div class="body-text mb-2">Canceled Orders</div>
-                              <h4>0</h4>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-
-                      <div class="wg-chart-default">
-                        <div class="flex items-center justify-between">
-                          <div class="flex items-center gap14">
-                            <div class="image ic-bg">
-                              <i class="icon-dollar-sign"></i>
-                            </div>
-                            <div>
-                              <div class="body-text mb-2">Canceled Orders Amount</div>
-                              <h4>0.00</h4>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-
-                    </div>
-
-                  </div>
-
-                  <div class="wg-box">
-                    <div class="flex items-center justify-between">
-                      <h5>Earnings revenue</h5>
-                      <div class="dropdown default">
-                        <button class="btn btn-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-haspopup="true"
-                          aria-expanded="false">
-                          <span class="icon-more"><i class="icon-more-horizontal"></i></span>
-                        </button>
-                        <ul class="dropdown-menu dropdown-menu-end">
-                          <li>
-                            <a href="javascript:void(0);">This Week</a>
-                          </li>
-                          <li>
-                            <a href="javascript:void(0);">Last Week</a>
-                          </li>
-                        </ul>
-                      </div>
-                    </div>
-                    <div class="flex flex-wrap gap40">
-                      <div>
-                        <div class="mb-2">
-                          <div class="block-legend">
-                            <div class="dot t1"></div>
-                            <div class="text-tiny">Revenue</div>
-                          </div>
-                        </div>
-                        <div class="flex items-center gap10">
-                          <h4>$37,802</h4>
-                          <div class="box-icon-trending up">
-                            <i class="icon-trending-up"></i>
-                            <div class="body-title number">0.56%</div>
-                          </div>
-                        </div>
+              {{-- Statistics Cards --}}
+              <div class="wg-box mb-4">
+                <div class="row">
+                  <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 mb-4">
+                    <div class="tf-statistics style-1">
+                      <div class="icon">
+                        <i class="icon-shopping-bag" style="font-size: 24px; color: #007bff;"></i>
                       </div>
                       <div>
-                        <div class="mb-2">
-                          <div class="block-legend">
-                            <div class="dot t2"></div>
-                            <div class="text-tiny">Order</div>
-                          </div>
-                        </div>
-                        <div class="flex items-center gap10">
-                          <h4>$28,305</h4>
-                          <div class="box-icon-trending up">
-                            <i class="icon-trending-up"></i>
-                            <div class="body-title number">0.56%</div>
-                          </div>
-                        </div>
+                        <div class="body-text">Total Products</div>
+                        <div class="title-dashboard">{{ \App\Models\Product::count() }}</div>
                       </div>
                     </div>
-                    <div id="line-chart-8"></div>
                   </div>
-
+                  <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 mb-4">
+                    <div class="tf-statistics style-1">
+                      <div class="icon">
+                        <i class="icon-layers" style="font-size: 24px; color: #28a745;"></i>
+                      </div>
+                      <div>
+                        <div class="body-text">Categories</div>
+                        <div class="title-dashboard">{{ \App\Models\Category::count() }}</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 mb-4">
+                    <div class="tf-statistics style-1">
+                      <div class="icon">
+                        <i class="icon-tag" style="font-size: 24px; color: #ffc107;"></i>
+                      </div>
+                      <div>
+                        <div class="body-text">Brands</div>
+                        <div class="title-dashboard">{{ \App\Models\Brand::count() }}</div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="col-xl-3 col-lg-6 col-md-6 col-sm-6 mb-4">
+                    <div class="tf-statistics style-1">
+                      <div class="icon">
+                        <i class="icon-users" style="font-size: 24px; color: #dc3545;"></i>
+                      </div>
+                      <div>
+                        <div class="body-text">Users</div>
+                        <div class="title-dashboard">{{ \App\Models\User::count() }}</div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-                <div class="tf-section mb-30">
+              </div>
 
-                  <div class="wg-box">
-                    <div class="flex items-center justify-between">
-                      <h5>Recent orders</h5>
-                      <div class="dropdown default">
-                        <a class="btn btn-secondary dropdown-toggle" href="#">
-                          <span class="view-all">View all</span>
-                        </a>
-                      </div>
-                    </div>
-                    <div class="wg-table table-all-user">
-                      <div class="table-responsive">
-                        <table class="table table-striped table-bordered">
-                          <thead>
-                            <tr>
-                              <th style="width: 80px">OrderNo</th>
-                              <th>Name</th>
-                              <th class="text-center">Phone</th>
-                              <th class="text-center">Subtotal</th>
-                              <th class="text-center">Tax</th>
-                              <th class="text-center">Total</th>
-
-                              <th class="text-center">Status</th>
-                              <th class="text-center">Order Date</th>
-                              <th class="text-center">Total Items</th>
-                              <th class="text-center">Delivered On</th>
-                              <th></th>
-                            </tr>
-                          </thead>
-                          <tbody>
-                            <tr>
-                              <td class="text-center">1</td>
-                              <td class="text-center">Divyansh Kumar</td>
-                              <td class="text-center">1234567891</td>
-                              <td class="text-center">$172.00</td>
-                              <td class="text-center">$36.12</td>
-                              <td class="text-center">$208.12</td>
-
-                              <td class="text-center">ordered</td>
-                              <td class="text-center">2024-07-11 00:54:14</td>
-                              <td class="text-center">2</td>
-                              <td></td>
-                              <td class="text-center">
-                                <a href="#">
-                                  <div class="list-icon-function view-icon">
-                                    <div class="item eye">
-                                      <i class="icon-eye"></i>
-                                    </div>
-                                  </div>
-                                </a>
-                              </td>
-                            </tr>
-                          </tbody>
-                        </table>
-                      </div>
-                    </div>
+              {{-- Quick Actions --}}
+              <div class="wg-box mb-4">
+                <h5 class="mb-4">Quick Actions</h5>
+                <div class="row">
+                  <div class="col-md-3 mb-3">
+                    <a href="{{ route('admin.product.add') }}" class="tf-button style-1 w-100">
+                      <i class="icon-plus"></i> Add Product
+                    </a>
                   </div>
+                  <div class="col-md-3 mb-3">
+                    <a href="{{ route('admin.category.add') }}" class="tf-button style-1 w-100">
+                      <i class="icon-plus"></i> Add Category
+                    </a>
+                  </div>
+                  <div class="col-md-3 mb-3">
+                    <a href="{{ route('admin.brand.add') }}" class="tf-button style-1 w-100">
+                      <i class="icon-plus"></i> Add Brand
+                    </a>
+                  </div>
+                  <div class="col-md-3 mb-3">
+                    <a href="{{ route('admin.users') }}" class="tf-button style-2 w-100">
+                      <i class="icon-users"></i> View Users
+                    </a>
+                  </div>
+                </div>
+              </div>
 
+              {{-- Recent Products --}}
+              <div class="wg-box">
+                <div class="flex items-center justify-between">
+                  <h5>Recent Products</h5>
+                  <a href="{{ route('admin.products') }}" class="tf-button style-2">View All</a>
+                </div>
+                <div class="table-responsive mt-4">
+                  <table class="table table-striped table-bordered">
+                    <thead>
+                      <tr>
+                        <th>#</th>
+                        <th>Product</th>
+                        <th>Category</th>
+                        <th>Price</th>
+                        <th>Stock</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      @forelse (\App\Models\Product::with('category')->latest()->take(5)->get() as $product)
+                        <tr>
+                          <td>{{ $product->id }}</td>
+                          <td class="pname">
+                            <div class="image">
+                              @if($product->image)
+                                <img src="{{ asset('storage/upload/images/products/' . $product->image) }}" alt="{{ $product->name }}" class="image">
+                              @else
+                                <div class="image-placeholder" style="width: 40px; height: 40px; background: #f0f0f0; display: flex; align-items: center; justify-content: center; border-radius: 8px;">
+                                  <i class="icon-shopping-bag" style="color: #ccc;"></i>
+                                </div>
+                              @endif
+                            </div>
+                            <div class="name">
+                              <a href="{{ route('admin.product.edit', $product->id) }}" class="body-title-2">{{ Str::limit($product->name, 30) }}</a>
+                            </div>
+                          </td>
+                          <td>{{ $product->category->name ?? '-' }}</td>
+                          <td>${{ number_format($product->regular_price ?? $product->price ?? 0, 2) }}</td>
+                          <td>
+                            @if(($product->stock_status ?? 'instock') == 'instock')
+                              <span class="badge bg-success">In Stock</span>
+                            @else
+                              <span class="badge bg-danger">Out of Stock</span>
+                            @endif
+                          </td>
+                        </tr>
+                      @empty
+                        <tr>
+                          <td colspan="5" class="text-center py-4">
+                            <p class="text-muted">No products yet</p>
+                            <a href="{{ route('admin.product.add') }}" class="tf-button style-1">Add First Product</a>
+                          </td>
+                        </tr>
+                      @endforelse
+                    </tbody>
+                  </table>
                 </div>
               </div>
 
             </div>
+          </div>
 
-
-            @include('components.admin.footer')
+          <div class="bottom-page">
+            <div class="body-text">Copyright © {{ date('Y') }} Falstore. All rights reserved.</div>
           </div>
 
         </div>
       </div>
     </div>
   </div>
+</div>
 
-  @push('scripts')
-    <script>
-      (function($) {
-
-        var tfLineChart = (function() {
-
-          var chartBar = function() {
-
-            var options = {
-              series: [{
-                  name: 'Total',
-                  data: [0.00, 0.00, 0.00, 0.00, 0.00, 273.22, 208.12, 0.00, 0.00, 0.00, 0.00, 0.00]
-                }, {
-                  name: 'Pending',
-                  data: [0.00, 0.00, 0.00, 0.00, 0.00, 273.22, 208.12, 0.00, 0.00, 0.00, 0.00, 0.00]
-                },
-                {
-                  name: 'Delivered',
-                  data: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00]
-                }, {
-                  name: 'Canceled',
-                  data: [0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00, 0.00]
-                }
-              ],
-              chart: {
-                type: 'bar',
-                height: 325,
-                toolbar: {
-                  show: false,
-                },
-              },
-              plotOptions: {
-                bar: {
-                  horizontal: false,
-                  columnWidth: '10px',
-                  endingShape: 'rounded'
-                },
-              },
-              dataLabels: {
-                enabled: false
-              },
-              legend: {
-                show: false,
-              },
-              colors: ['#2377FC', '#FFA500', '#078407', '#FF0000'],
-              stroke: {
-                show: false,
-              },
-              xaxis: {
-                labels: {
-                  style: {
-                    colors: '#212529',
-                  },
-                },
-                categories: ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'],
-              },
-              yaxis: {
-                show: false,
-              },
-              fill: {
-                opacity: 1
-              },
-              tooltip: {
-                y: {
-                  formatter: function(val) {
-                    return "$ " + val + ""
-                  }
-                }
-              }
-            };
-
-            chart = new ApexCharts(
-              document.querySelector("#line-chart-8"),
-              options
-            );
-            if ($("#line-chart-8").length > 0) {
-              chart.render();
-            }
-          };
-
-          return {
-            init: function() {},
-
-            load: function() {
-              chartBar();
-            },
-            resize: function() {},
-          };
-        })();
-
-        jQuery(document).ready(function() {});
-
-        jQuery(window).on("load", function() {
-          tfLineChart.load();
-        });
-
-        jQuery(window).on("resize", function() {});
-      })(jQuery);
-    </script>
-  @endpush
 @endsection

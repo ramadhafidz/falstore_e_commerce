@@ -51,7 +51,7 @@
               </tr>
             </thead>
             <tbody>
-              <tr>
+              {{-- <tr>
                 <td>
                   <div class="shopping-cart__product-item">
                     <img loading="lazy" src="{{ asset('images/cart-item-1.jpg') }}" width="120" height="120" alt="" />
@@ -66,14 +66,58 @@
                     </ul>
                   </div>
                 </td>
+                
                 <td>
-                  <span class="shopping-cart__product-price">$99</span>
+                  <span class="price">$99</span>
                 </td>
                 <td>
                   <div class="qty-control position-relative">
                     <input type="number" name="quantity" value="3" min="1" class="qty-control__number text-center">
                     <div class="qty-control__reduce">-</div>
                     <div class="qty-control__increase">+</div>
+                  </div>
+                </td>
+                <td>
+                  <span class="subtotal">$297</span>
+                </td>
+                <td>
+                </td>
+                  <a href="#" class="remove-cart">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="#767676" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0.259435 8.85506L9.11449 0L10 0.885506L1.14494 9.74056L0.259435 8.85506Z" />
+                      <path d="M0.885506 0.0889838L9.74057 8.94404L8.85506 9.82955L0 0.97449L0.885506 0.0889838Z" />
+                    </svg>
+                  </a>
+              </tr> --}}
+              <tr>
+                <td>
+                  <div class="shopping-cart__product-item">
+                    <img loading="lazy" src="{{ asset('images/cart-item-1.jpg') }}" width="120" height="120" alt="" />
+                  </div>
+                </td>
+                <td>
+                  <div class="shopping-cart__product-item__detail">
+                    <h4>Zessi Dresses</h4>
+                    <ul class="shopping-cart__product-item__options">
+                      <li>Color: Black</li>
+                      <li>Size: L</li>
+                    </ul>
+                  </div>
+                </td>
+                <td>
+                  <span class="shopping-cart__product-price" data-price="99">$99</span>
+                </td>
+                <td>
+                  <div class="qty-control position-relative">
+                    <input 
+                      type="number" 
+                      name="quantity" 
+                      value="3" 
+                      min="1" 
+                      class="qty-control__number text-center" 
+                      onchange="updateSubtotal(this)">
+                    <div class="qty-control__reduce" onclick="changeQuantity(this, -1)">-</div>
+                    <div class="qty-control__increase" onclick="changeQuantity(this, 1)">+</div>
                   </div>
                 </td>
                 <td>
@@ -88,7 +132,7 @@
                   </a>
                 </td>
               </tr>
-              <tr>
+              {{-- <tr>
                 <td>
                   <div class="shopping-cart__product-item">
                     <img loading="lazy" src="{{ asset('images/cart-item-2.jpg') }}" width="120" height="120" alt="" />
@@ -124,11 +168,54 @@
                     </svg>
                   </a>
                 </td>
-              </tr>
+              </tr> --}}
               <tr>
                 <td>
                   <div class="shopping-cart__product-item">
-                    <img loading="lazy" src="{{ asset('images/cart-item-3.jpg') }}" width="120" height="120" alt="" />
+                    <img loading="lazy" src="{{ asset('images/cart-item-2.jpg') }}" width="120" height="120" alt="" />
+                  </div>
+                </td>
+                <td>
+                  <div class="shopping-cart__product-item__detail">
+                    <h4>Kirby T-Shirt</h4>
+                    <ul class="shopping-cart__product-item__options">
+                      <li>Color: Gray</li>
+                      <li>Size: L</li>
+                    </ul>
+                  </div>
+                </td>
+                <td>
+                  <span class="shopping-cart__product-price" data-price="99">$99</span>
+                </td>
+                <td>
+                  <div class="qty-control position-relative">
+                    <input 
+                      type="number" 
+                      name="quantity" 
+                      value="3" 
+                      min="1" 
+                      class="qty-control__number text-center" 
+                      onchange="updateSubtotal(this)">
+                    <div class="qty-control__reduce" onclick="changeQuantity(this, -1)">-</div>
+                    <div class="qty-control__increase" onclick="changeQuantity(this, 1)">+</div>
+                  </div>
+                </td>
+                <td>
+                  <span class="shopping-cart__subtotal">$297</span>
+                </td>
+                <td>
+                  <a href="#" class="remove-cart">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="#767676" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0.259435 8.85506L9.11449 0L10 0.885506L1.14494 9.74056L0.259435 8.85506Z" />
+                      <path d="M0.885506 0.0889838L9.74057 8.94404L8.85506 9.82955L0 0.97449L0.885506 0.0889838Z" />
+                    </svg>
+                  </a>
+                </td>
+              </tr>
+              {{-- <tr>
+                <td>
+                  <div class="shopping-cart__product-item">
+                    <img loading="lazy" src="{{ asset('images/cart-item-3.jpg') }}" width="120" height="120" alt="" />
                   </div>
                 </td>
                 <td>
@@ -161,6 +248,49 @@
                     </svg>
                   </a>
                 </td>
+              </tr> --}}
+              <tr>
+                <td>
+                  <div class="shopping-cart__product-item">
+                    <img loading="lazy" src="{{ asset('images/cart-item-3.jpg') }}" width="120" height="120" alt="" />
+                  </div>
+                </td>
+                <td>
+                  <div class="shopping-cart__product-item__detail">
+                    <h4>Cobleknit Shawl</h4>
+                    <ul class="shopping-cart__product-item__options">
+                      <li>Color: Green</li>
+                      <li>Size: L</li>
+                    </ul>
+                  </div>
+                </td>
+                <td>
+                  <span class="shopping-cart__product-price" data-price="99">$99</span>
+                </td>
+                <td>
+                  <div class="qty-control position-relative">
+                    <input 
+                      type="number" 
+                      name="quantity" 
+                      value="3" 
+                      min="1" 
+                      class="qty-control__number text-center" 
+                      onchange="updateSubtotal(this)">
+                    <div class="qty-control__reduce" onclick="changeQuantity(this, -1)">-</div>
+                    <div class="qty-control__increase" onclick="changeQuantity(this, 1)">+</div>
+                  </div>
+                </td>
+                <td>
+                  <span class="shopping-cart__subtotal">$297</span>
+                </td>
+                <td>
+                  <a href="#" class="remove-cart">
+                    <svg width="10" height="10" viewBox="0 0 10 10" fill="#767676" xmlns="http://www.w3.org/2000/svg">
+                      <path d="M0.259435 8.85506L9.11449 0L10 0.885506L1.14494 9.74056L0.259435 8.85506Z" />
+                      <path d="M0.885506 0.0889838L9.74057 8.94404L8.85506 9.82955L0 0.97449L0.885506 0.0889838Z" />
+                    </svg>
+                  </a>
+                </td>
               </tr>
             </tbody>
           </table>
@@ -174,7 +304,7 @@
         </div>
         <div class="shopping-cart__totals-wrapper">
           <div class="sticky-content">
-            <div class="shopping-cart__totals">
+            {{-- <div class="shopping-cart__totals">
               <h3>Cart Totals</h3>
               <table class="cart-totals">
                 <tbody>
@@ -213,10 +343,51 @@
                   </tr>
                 </tbody>
               </table>
+            </div> --}}
+            <div class="shopping-cart__totals">
+              <h3>Cart Totals</h3>
+              <table class="cart-totals">
+                <tbody>
+                  <tr>
+                    <th>Subtotal</th>
+                    <td class="cart-subtotal">$1300</td>
+                  </tr>
+                  <tr>
+                    <th>Shipping</th>
+                    <td>
+                      <div class="form-check">
+                        <input class="form-check-input form-check-input_fill" type="radio" name="shipping_option" value="0" id="free_shipping" onchange="updateCartTotal()">
+                        <label class="form-check-label" for="free_shipping">Free shipping</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input form-check-input_fill" type="radio" name="shipping_option" value="49" id="flat_rate" onchange="updateCartTotal()">
+                        <label class="form-check-label" for="flat_rate">Flat rate: $49</label>
+                      </div>
+                      <div class="form-check">
+                        <input class="form-check-input form-check-input_fill" type="radio" name="shipping_option" value="8" id="local_pickup" onchange="updateCartTotal()">
+                        <label class="form-check-label" for="local_pickup">Local pickup: $8</label>
+                      </div>
+                      <div>Shipping to AL.</div>
+                      <div>
+                        <a href="#" class="menu-link menu-link_us-s">CHANGE ADDRESS</a>
+                      </div>
+                    </td>
+                  </tr>
+                  <tr>
+                    <th>VAT</th>
+                    <td class="cart-vat">$19</td>
+                  </tr>
+                  <tr>
+                    <th>Total</th>
+                    <td class="cart-total">$1319</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
+            
             <div class="mobile_fixed-btn_wrapper">
               <div class="button-wrapper container">
-                <a href="{{ route('cart.checkput') }}" class="btn btn-primary btn-checkout">PROCEED TO CHECKOUT</a>
+                <a href="{{route('cart.checkout')}}" class="btn btn-primary btn-checkout">PROCEED TO CHECKOUT</a>
               </div>
             </div>
           </div>
@@ -224,7 +395,59 @@
       </div>
     </section>
   </main>
+  <script>
+    function updateSubtotal(input) {
+      const row = input.closest('tr');
+      const price = parseFloat(row.querySelector('.shopping-cart__product-price').dataset.price);
+      const quantity = parseInt(input.value);
+      const subtotalElement = row.querySelector('.shopping-cart__subtotal');
+      
+      // Calculate subtotal and update
+      const subtotal = price * quantity;
+      subtotalElement.textContent = `$${subtotal.toFixed(2)}`;
+    }
+  
+    function changeQuantity(button, change) {
+      const input = button.parentElement.querySelector('.qty-control__number');
+      const newValue = Math.max(1, parseInt(input.value) + change);
+      input.value = newValue;
+      updateSubtotal(input);
+      
+    }
+    function updateCartTotal() {
+    // Calculate new subtotal from quantity changes
+    const productRows = document.querySelectorAll('tr');
+    let newSubtotal = 0;
 
+    productRows.forEach(row => {
+      const priceElement = row.querySelector('.shopping-cart__product-price');
+      const quantityElement = row.querySelector('.qty-control__number');
+
+      if (priceElement && quantityElement) {
+        const price = parseFloat(priceElement.dataset.price);
+        const quantity = parseInt(quantityElement.value);
+        newSubtotal += price * quantity;
+      }
+    });
+
+    // Update subtotal
+    document.querySelector('.cart-subtotal').textContent = `$${newSubtotal.toFixed(2)}`;
+
+    // Get VAT and shipping
+    const vat = parseFloat(document.querySelector('.cart-vat').textContent.replace('$', ''));
+    const shippingOption = document.querySelector('input[name="shipping_option"]:checked');
+    const shipping = shippingOption ? parseFloat(shippingOption.value) : 0;
+
+    // Calculate and update total
+    const total = newSubtotal + vat + shipping;
+    document.querySelector('.cart-total').textContent = `$${total.toFixed(2)}`;
+  }
+
+  // Attach updateCartTotal to quantity change events
+  document.querySelectorAll('.qty-control__number').forEach(input => {
+    input.addEventListener('change', () => updateCartTotal());
+  });
+  </script>  
   <hr class="mt-5 text-secondary" />
   <div id="scrollTop" class="visually-hidden end-0"></div>
   <div class="page-overlay"></div>
